@@ -1,4 +1,4 @@
 #ifdef MENU
 #define MENU
-void display_menu();
+int display_menu();
 #endif
