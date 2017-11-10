@@ -18,24 +18,27 @@ int main(void)
 
 		if(menu == 1) //게임설명
 		{
+			exit(0);
 		}
 		else if(menu == 2) //사람 간 일대일 모드
 		{
-			printf("ok");
 			map();
+			return 0;
 		}
 		else if(menu == 3) //사람 대 컴퓨터 초급모드
 		{
-			printf("ko");
 			map();
+			return 0;
 		}
 		else if(menu == 4) //사람 대 컴퓨터 중급모드
 		{
 			map();
+			return 0;
 		}
 		else if(menu == 5) //사람 대 컴퓨터 고급모드
 		{
 			map();
+			return 0;
 		}
 		else if(menu == 6)
 		{
