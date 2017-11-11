@@ -1,4 +1,4 @@
-DIRS = lib app //
+DIRS = lib app
 .PHONY : all clean
 
 all:
