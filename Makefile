@@ -2,7 +2,7 @@ DIRS = lib app
 .PHONY : all clean
 
 all:
-	@for d in $(DIR);\
+	@for d in $(DIRS);\
 	do\
 		$(MAKE) -C $$d;\
 	done
