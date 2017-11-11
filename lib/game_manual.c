@@ -17,7 +17,8 @@ int game_manual(void)
 	printf("\n\n            위 : ↑ | 아래 : ↓ | 왼쪽 : ← | 오른쪽 : → | 돌 놓기 : space");
 
 	printf("\n\n\n\t                   게임 메뉴로 돌아가기 : M");
-	while (1)
+	
+	while (1) // when user enters M or m, back to the game menu
 	{
 		ch = getch();
 		if (ch == 77 || ch == 109)
