@@ -11,23 +11,23 @@ void map()
 		for(int j = 0; j < 20; j++)
 		{
 			if(i == 0 && j == 0) // drawing start
-				printf("┌");
+				printf("┌─");
 			else if (i == 0 && j == 19)
 				printf("┐");
 			else if (i == 19 && j == 0)
-				printf("└");
+				printf("└─");
 			else if (i == 19 && j == 19)
 				printf("┘");
 			else if (i == 0)
-				printf("┬");
+				printf("┬─");
 			else if (j == 0)
-				printf("├");
+				printf("├ ");
 			else if (j == 19)
 				printf("┤");
 			else if (i == 19)
-				printf("┴");
+				printf("┴─");
 			else
-				printf("┼");
+				printf("．");
 		}
 		printf("\n");
 	}
