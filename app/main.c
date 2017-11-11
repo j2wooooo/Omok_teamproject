@@ -7,6 +7,7 @@
 
 void map();
 int display_menu();
+int game_manual();
 
 int main(void)
 {
@@ -18,7 +19,7 @@ int main(void)
 
 		if(menu == 1) //게임설명
 		{
-			exit(0);
+			game_manual();
 		}
 		else if(menu == 2) //사람 간 일대일 모드
 		{
