@@ -1,5 +1,5 @@
-#include<stdio.h>
-#include<stdlib.h> // system function
+#include <stdio.h>
+#include <stdlib.h> // system function
 
 int display_menu(void)
 {
@@ -20,6 +20,7 @@ int display_menu(void)
 		printf("\n\n\t\t\t         =\t  (6) 종료\t      =");
 		printf("\n\n\t\t\t☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★");
 		printf("\n\n\t\t\t\t\t    선택 : ");
+		
 		scanf("%d",&menu);
 		if(menu < 1 || menu > 6)
 		{

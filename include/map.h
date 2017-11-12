@@ -1,4 +1,4 @@
 #ifdef MAP
 #define MAP
-void map()
+void map();
 #endif

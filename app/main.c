@@ -1,19 +1,18 @@
 #include <stdio.h>
-#include <stdlib.h> //exit function
+#include <stdlib.h> // exit function
+#include "getch.h"
+#include "gotoxy.h"
 
-void map();
-int display_menu();
-int game_manual();
-void gotoxy(int x,int y);
-void game_person();
+#include "map.h"
+#include "display_menu.h"
+#include "game_manual.h"
+#include "game_person.h"
 
-//int map_info[20][20] = {0};
-int x=10; int y=10;
+int x=10; int y=10; // start location
 
 int main(void)
 {
 	int menu = 1;
-
 	while(menu)
 	{
 		menu=display_menu();

@@ -2,8 +2,10 @@
 #include <stdlib.h>
 #include "map.h"
 
-int map_info[20][20] = {0}; // 돌을 놓을 수 있는 위치를 0으로 초기화 해 놓음
+// 돌을 놓을 수 있는 위치를 0으로 초기화 해놓음
+int map_info[20][20] = {0};
 
+// graw map using map_info array
 void map()
 {
 	system("clear");
