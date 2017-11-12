@@ -8,6 +8,8 @@
 void map();
 int display_menu();
 int game_manual();
+void gotoxy(int x,int y);
+int x=10; int y=10;
 
 int main(void)
 {
@@ -24,7 +26,8 @@ int main(void)
 		else if(menu == 2) //사람 간 일대일 모드
 		{
 			map();
-			return 0;
+			gotoxy(x,y);
+			sleep(100000);
 		}
 		else if(menu == 3) //사람 대 컴퓨터 초급모드
 		{
