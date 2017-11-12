@@ -7,7 +7,7 @@ int game_manual();
 void gotoxy(int x,int y);
 void game_person();
 
-//int map_info[20][20] = {0};
+int map_info[20][20];
 int x=10; int y=10;
 
 int main(void)
