@@ -5,7 +5,6 @@
 int getch();
 extern int map_info[20][40];
 void gotoxy(int x, int y);
-//int m=10; int n=10;
 int color = 2;
 extern int x; int y;
 
@@ -17,26 +16,18 @@ void game_person()
 		dir = getch();
 		switch (dir) {
 		case 'w':
-			//if (m - 1 != 0)
-			//	n -= 1;
 			if(x-1 > 1)
 				x-=1;
 			break;
 		case 'a':
-			//if (n - 2 != 0)
-			//	m -= 2;
 			if(y-2 > 0)
 				y -= 2;
 			break;
 		case 's':
-			//if (m + 1 != 20)
-			//	n += 1;
 			if(x+1 < 20)
 				x += 1;
 			break;
 		case 'd':
-			//if (n + 2 != 20)
-			//	m += 2;
 			if(y+2 < 40)
 				y += 2;
 			break;
