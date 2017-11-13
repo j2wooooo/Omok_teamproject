@@ -6,6 +6,7 @@ int display_menu();
 int game_manual();
 void gotoxy(int x,int y);
 void game_person();
+void com1();
 
 int map_info[20][20];
 int x=10; int y=10;
@@ -33,6 +34,7 @@ int main(void)
 		{
 			map();
 			gotoxy(x,y);
+			com1();
 			return 0;
 		}
 		else if(menu == 4) //사람 대 컴퓨터 중급모드
