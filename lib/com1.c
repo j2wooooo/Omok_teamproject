@@ -5,6 +5,10 @@
 
 int main()
 {
- 
+ while(1)
+ {
+  map();
+ }
+
  return 0;
 }
