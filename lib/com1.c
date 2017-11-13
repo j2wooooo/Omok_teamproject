@@ -6,11 +6,9 @@
 extern int map_info[20][40];
 extern int x; int y;
 
-int color = 2;
-
 void com1()
 {
-
+	int color = 2;
 	char dir;
 
 	while(1){
