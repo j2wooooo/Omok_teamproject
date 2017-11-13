@@ -3,7 +3,7 @@
 #include "getch.h"
 
 int getch();
-extern int map_info[20][40];
+extern int map_info[20][20];
 void gotoxy(int x, int y);
 int color = 2;
 extern int x; int y;
@@ -20,7 +20,7 @@ void game_person()
 				x-=1;
 			break;
 		case 'a':
-			if(y-2 > 0)
+			if(y-2 > 1)
 				y -= 2;
 			break;
 		case 's':
@@ -32,26 +32,26 @@ void game_person()
 				y += 2;
 			break;
 		case ' ':
-			if (map_info[x][y] == 0)
-			{
+			//if (map_info[x][y/2] == 0)
+			//{
 				if (color == 1) {
 					printf("○");
-					map_info[x][y] = 1;
+				//	map_info[x][y] = 1;
 				//	a[x][y] = 1; // color
 					color = 2;
 				}
 				else if (color == 2) {
 					printf("●");
-					map_info[x][y] = 1;
+				//	map_info[x][y] = 1;
 				//	a[x][y] = 2; // color
 					color = 1;
 				}
-			}
+			//}
 		}
-		if (map_info[x][y] != 1)
-		{
+		//if (map_info[x][y/2] != 1)
+		//{
 			gotoxy(x,y);
 			//printf("%d %d\n", x,y);
-		}
+		//}
 	}
 }
