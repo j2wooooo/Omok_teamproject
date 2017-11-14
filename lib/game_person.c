@@ -2,36 +2,68 @@
 #include <stdlib.h>
 #include "getch.h"
 
+#define usr1_UP 119 // 방향키 w
+#define usr1_DOWN 115 // 방향키 s
+#define usr1_RIGHT 100 // 방향키 d
+#define usr1_LEFT 97 // 방향키 a
+
+#define usr2_UP 65 // 방향키 up
+#define usr2_DOWN 66 // 방향키 down
+#define usr2_RIGHT 67 // 방향키 right
+#define usr2_LEFT 68 // 방향키 left
+
+#define put_stone 32// 돌 놓기
+
+
 int getch();
 extern int map_info[20][20];
 void gotoxy(int x, int y);
-int color = 2;
 extern int x; int y;
 
 void game_person()
 {
-	char dir;
+	char ch;
+	int color = 2;
 
 	while (1) {
-		dir = getch();
-		switch (dir) {
-		case 'w':
+
+		ch = getch();
+
+		switch (ch) {
+		case usr1_UP:
 			if(x-1 > 1)
 				x-=1;
 			break;
-		case 'a':
+		case usr1_LEFT:
 			if(y-2 > 1)
 				y -= 2;
 			break;
-		case 's':
+		case usr1_DOWN:
 			if(x+1 < 20)
 				x += 1;
 			break;
-		case 'd':
+		case usr1_RIGHT:
 			if(y+2 < 40)
 				y += 2;
 			break;
-		case ' ':
+                case usr2_UP:
+                        if(x-1 > 1)
+                                x-=1;
+                        break;
+                case usr2_LEFT:
+                        if(y-2 > 1)
+                                y -= 2;
+                        break;
+                case usr2_DOWN:
+                        if(x+1 < 20)
+                                x += 1;
+                        break;
+                case usr2_RIGHT:
+                        if(y+2 < 40)
+                                y += 2;
+                        break;
+
+		case put_stone:
 			//if (map_info[x][y/2] == 0)
 			//{
 				if (color == 1) {
@@ -47,7 +79,7 @@ void game_person()
 					color = 1;
 				}
 			//}
-		}
+			}
 		//if (map_info[x][y/2] != 1)
 		//{
 			gotoxy(x,y);
