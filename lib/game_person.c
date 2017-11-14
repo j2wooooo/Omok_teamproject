@@ -14,20 +14,20 @@
 
 #define put_stone 32// 돌 놓기
 
+void gotoxy(int x, int y); // 키보드 커서를 이동시켜주는 함수
+int getch(); // 문자를 입력으로 받을 수 있는 함수
+extern int map_info[20][20]; // 오목판의 커서이동가능 범위가 들어간 map의 정보, map함수와 연동되어야 하기 때문에 전역변수로 쓴다
+extern int x; int y; // 현재 키보드 커서의 위치 gotoxy 함수와 연동되어야 하기 때문에 전역변수로 쓴다
 
-int getch();
-extern int map_info[20][20];
-void gotoxy(int x, int y);
-extern int x; int y;
-
-void game_person()
+void game_person() // user1과 user2가 오목게임을 하는 함수
 {
-	char ch;
-	int color = 2;
+	char ch; // 돌 놓을 자리를 움직이기 위한 키보드 입력 받기
+	int color = 2; //  color, 1은 black 2는 white
 
-	while (1) {
+	while (1) { // 키보드 입력을 무한루프를 돌며 받는다
 
-		ch = getch();
+		ch = getch(); // 키보드 입력을 받는다 
+			      // 항상 이곳에서 멈춰서 입력을 기다리고 있다
 
 		switch (ch) {
 		case usr1_UP:
@@ -70,19 +70,19 @@ void game_person()
 					printf("○");
 				//	map_info[x][y] = 1;
 				//	a[x][y] = 1; // color
-					color = 2;
+					color = 2; // 다음에 놓을 돌의 색깔을 바꾼다
 				}
 				else if (color == 2) {
 					printf("●");
 				//	map_info[x][y] = 1;
 				//	a[x][y] = 2; // color
-					color = 1;
+					color = 1; // 다음에 놓을 돌의 색깔을 바꾼다
 				}
 			//}
 			}
 		//if (map_info[x][y/2] != 1)
 		//{
-			gotoxy(x,y);
+			gotoxy(x,y); // 키보드커서의 위치를 바꾸는 키보드입력이 들어왔다면 커서의 위치를 바꾼다
 			//printf("%d %d\n", x,y);
 		//}
 	}
