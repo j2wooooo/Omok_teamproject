@@ -68,13 +68,17 @@ void game_person() // user1과 user2가 오목게임을 하는 함수
 			//{
 				if (color == 1) {
 					printf("○");
-				//	map_info[x][y] = 1;
+					map_info[x][y/2] = 1;
+
+					//istherewinner();
 				//	a[x][y] = 1; // color
 					color = 2; // 다음에 놓을 돌의 색깔을 바꾼다
 				}
 				else if (color == 2) {
 					printf("●");
-				//	map_info[x][y] = 1;
+					map_info[x][y/2] = 2;
+
+					//istherewinner();
 				//	a[x][y] = 2; // color
 					color = 1; // 다음에 놓을 돌의 색깔을 바꾼다
 				}
