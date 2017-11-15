@@ -18,7 +18,7 @@ void map_modify()
 
 	system("clear");
 
-	for(i = 0; i < 20; i ++)
+	for(i = 0; i < 20; i ++) // 변수 초기화
 	{
 		for(j = 0; j < 20; j++)
 		{
