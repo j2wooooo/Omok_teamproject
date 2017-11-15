@@ -8,7 +8,7 @@ extern int x; int y;
 
 void com1()
 {
-	int color = 2;
+	int flag = 0; // 0->user, 1->com
 	char dir;
 
 	while(1){
@@ -32,18 +32,9 @@ void com1()
                         break;
                 case ' ':
                         if (map_info[x][y] == 0)
-                        {
-                                if (color == 1) {
-                                        printf("○");
-                                        map_info[x][y] = 1;
-                                //      a[x][y] = 1; // color
-                                        color = 2;
-                                }
-                                else if (color == 2) {
-                                        printf("●");
-                                        map_info[x][y] = 1;
-                                //      a[x][y] = 2; // color
-                                }
+                        { // if empty location
+                                printf("●");
+				flag = 1; // com turn
                         }
                 }
                 if (map_info[x][y] != 1)
