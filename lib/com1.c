@@ -12,35 +12,36 @@ void com1()
 	char dir;
 
 	while(1){
-	        dir = getch();
-                switch (dir) {
-                case 'w':
-                        if(x-1 > 1)
-                                x-=1;
-                        break;
-                case 'a':
-                        if(y-2 > 0)
-                                y -= 2;
-                        break;
-                case 's':
-                        if(x+1 < 20)
-                                x += 1;
-                        break;
-                case 'd':
-                        if(y+2 < 40)
-                                y += 2;
-                        break;
-                case ' ':
-                        if (map_info[x][y] == 0)
-                        { // if empty location
-                                printf("●");
-				flag = 1; // com turn
-                        }
-                }
-                if (map_info[x][y] != 1)
-                {
+	        if(flag == 0){
+			dir = getch();
+                	switch (dir) {
+                	case 'w':
+                        	if(x-1 > 1)
+                                	x-=1;
+                        	break;
+                	case 'a':
+                        	if(y-2 > 0)
+                                	y -= 2;
+                        	break;
+                	case 's':
+                        	if(x+1 < 20)
+                                	x += 1;
+                        	break;
+                	case 'd':
+                        	if(y+2 < 40)
+                                	y += 2;
+                        	break;
+                	case ' ':
+                       		if (map_info[x][y] == 0)
+                        	{ // if empty location
+                                	printf("●");
+					flag = 1; // com turn
+                        	}
+                	}
                         gotoxy(x,y);
-                        //printf("%d %d\n", x,y);
-                }
+		}
+		else{ // com mode
+			printf("map info: %d %d", map_info[x][y]);
+		}
         }
 }
