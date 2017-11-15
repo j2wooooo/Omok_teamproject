@@ -6,6 +6,11 @@
 extern int map_info[20][40];
 extern int x; int y;
 
+void checkEverywhere(int x, int y)
+{
+ 
+}
+
 void com1()
 {
 	int flag = 0; // 0->user, 1->com
@@ -41,7 +46,8 @@ void com1()
                         gotoxy(x,y);
 		}
 		else{ // com mode
-			printf("map info: %d %d", map_info[x][y]);
+			checkEverywhere(x,y);
+			flag = 0; // user turn
 		}
         }
 }
