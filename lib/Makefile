@@ -1,6 +1,9 @@
 libfuncs.a: map.o display_menu.o game_manual.o getch.o gotoxy.o game_person.o com1.o
 	ar rv libfuncs.a map.o display_menu.o game_manual.o getch.o gotoxy.o game_person.o com1.o
 
+istherewinner.o: istherewinner.c
+	gcc -c -g istherewinner.c -o istherewinner.o
+
 game_person.o: game_person.c
 	gcc -c -g game_person.c -I../include -o game_person.o
 
