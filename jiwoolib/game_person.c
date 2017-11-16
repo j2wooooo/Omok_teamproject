@@ -24,6 +24,8 @@ int getch(); // 문자를 입력으로 받을 수 있는 함수
 struct map_info mi[20][20]; // 오목판의 커서이동가능 범위가 들어간 map의 정보, map함수와 연동되어야 하기 때문에 전역변수로 쓴다
 extern int x; int y; // 현재 키보드 커서의 위치 gotoxy 함수와 연동되어야 하기 때문에 전역변수로 쓴다
 
+int istherewinner();
+int exitflag = 0;
 void game_person() // user1과 user2가 오목게임을 하는 함수
 {
 	char ch; // 돌 놓을 자리를 움직이기 위한 키보드 입력 받기
@@ -78,20 +80,17 @@ void game_person() // user1과 user2가 오목게임을 하는 함수
 
 				if(val == 1)
 				{
-					printf("winner is white!");
-					printf("\n\n\n\n\n\n\n\n\n\n");
-					for(int i = 0; i < 20; i++){
-						for(int j = 0; j < 20; j++){
-							printf("%d",mi[i][j].put);}
-					printf("\n");}
-
-					printf("\n\n\n");
-					for(int i = 0; i < 20; i++){
-						for(int j = 0; j < 20; j++){
-							printf("%d",mi[i][j].color);}
-					printf("\n");}
+					printf("winner is white!\n");
+					printf("메뉴로 돌아가기 [x]");
+					ch = getch();
+					if (ch == 120)
+					{
+						exitflag = 1;
+					}
 				}
 				color = 2; // 다음에 놓을 돌의 색깔을 바꾼다
+				if(exitflag == 1)
+					break;
 			}
 			else if (color == 2) {
 				printf("●");
@@ -102,21 +101,24 @@ void game_person() // user1과 user2가 오목게임을 하는 함수
 
 				if(val == 2)
 				{
-					printf("winner is black!");
-					printf("\n\n\n\n\n\n\n\n\n\n");
-					for(int i = 0; i < 20; i++){
-						for(int j = 0; j < 20; j++){
-							printf("%d",mi[i][j].put);}
-					printf("\n");}
-
-					printf("\n\n\n");
-					for(int i = 0; i < 20; i++){
-						for(int j = 0; j < 20; j++){
-							printf("%d",mi[i][j].color);}
-					printf("\n");}
+					printf("winner is black!\n");
+					printf("메뉴로 돌아가기 [x]");
+					ch = getch();
+					if (ch == 120)
+					{
+						exitflag = 1;
+					}
 				}
 				color = 1; // 다음에 놓을 돌의 색깔을 바꾼다
+				if(exitflag == 1)
+					break;
 			}
+	
+		}
+		if(exitflag == 1)
+		{
+			exitflag = 0;
+			break;
 		}
 		gotoxy(x,y); // 키보드커서의 위치를 바꾸는 키보드입력이 들어왔다면 커서의 위치를 바꾼다
 		//printf("%d %d\n",x,y);
