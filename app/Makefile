@@ -1,5 +1,5 @@
 main : main.o
-	gcc -g main.o -L../lib -lfuncs -o ../main
+	gcc -g main.o -L../lib -lfuncs -L../jiwoolib -ljiwoofuncs -o ../main
 
 main.o : main.c
 	gcc -c -g main.c -I../include -o main.o
