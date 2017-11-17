@@ -28,7 +28,6 @@ int main(void)
 			map();
 			gotoxy(x,y);
 			game_person();
-			sleep(100000);
 		}
 		else if(menu == 3) //사람 대 컴퓨터 초급모드
 		{

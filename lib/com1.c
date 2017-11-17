@@ -6,7 +6,7 @@
 #define BLACK 1
 #define WHITE 2
 
-extern int map_info[20][40];
+extern int map_info[20][20];
 extern int x; int y;
 
 int black = 0; // num of black stones
@@ -24,7 +24,7 @@ void checkblack(int x, int y)
 			}
 		check[x1][c] = black;
 		c++;
-		black = 0;
+		black = 0
 	}
 }
 
@@ -34,7 +34,7 @@ void com1()
 	char dir;
 
 	while(1){
-	        if(flag == 0){
+		if(flag == 0){
 			dir = getch();
                 	switch (dir) {
                 	case 'w':
@@ -42,7 +42,7 @@ void com1()
                                 	x-=1;
                         	break;
                 	case 'a':
-                        	if(y-2 > 0)
+                        	if(y-2 > 1)
                                 	y -= 2;
                         	break;
                 	case 's':
