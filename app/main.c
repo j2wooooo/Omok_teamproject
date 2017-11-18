@@ -7,6 +7,7 @@ int game_manual();
 void gotoxy(int x,int y);
 void game_person();
 void com1();
+void com2();
 
 int map_info[20][20];
 int x=10; int y=10;
@@ -25,8 +26,8 @@ int main(void)
 		}
 		else if(menu == 2) //사람 간 일대일 모드
 		{
-			map();
-			gotoxy(x,y);
+			//map();
+			//gotoxy(x,y);
 			game_person();
 		}
 		else if(menu == 3) //사람 대 컴퓨터 초급모드
@@ -38,8 +39,9 @@ int main(void)
 		}
 		else if(menu == 4) //사람 대 컴퓨터 중급모드
 		{
-			map();
-			gotoxy(x,y);
+			//map();
+			//gotoxy(x,y);
+			com2();
 			return 0;
 		}
 		else if(menu == 5) //사람 대 컴퓨터 고급모드
