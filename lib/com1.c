@@ -24,7 +24,7 @@ void checkblack(int x, int y)
 			}
 		check[x1][c] = black;
 		c++;
-		black = 0
+		black = 0;}
 	}
 }
 
@@ -67,5 +67,5 @@ void com1()
 			checkblack(x,y);
 			flag = 0; // user turn
 		}
-        }
+	}
 }
