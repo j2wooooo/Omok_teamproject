@@ -51,14 +51,14 @@ void usrputstone(int player)
                         break;
 
 		case put_stone:
-			if (player == 2) {
+			if (player == 1) {
 				printf("○");
 				mi[x][y/2].put = 1;
 				mi[x][y/2].color = 1;
 				flag = 1;
 
 			}
-			else if (player == 1) {
+			else{
 				printf("●");
 				mi[x][y/2].put = 1;
 				mi[x][y/2].color = 2;

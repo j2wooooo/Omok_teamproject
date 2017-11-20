@@ -31,7 +31,7 @@ void com2() // user1과 user2가 오목게임을 하는 함수
 {
 	int player = selectplayer();
 
-	map();
+	map_modify();
 	gotoxy(x,y);
 
 	char ch;

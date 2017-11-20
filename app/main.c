@@ -26,8 +26,6 @@ int main(void)
 		}
 		else if(menu == 2) //사람 간 일대일 모드
 		{
-			//map();
-			//gotoxy(x,y);
 			game_person();
 		}
 		else if(menu == 3) //사람 대 컴퓨터 초급모드
@@ -35,12 +33,9 @@ int main(void)
 			map();
 			gotoxy(x,y);
 			com1();
-			return 0;
 		}
 		else if(menu == 4) //사람 대 컴퓨터 중급모드
 		{
-			//map();
-			//gotoxy(x,y);
 			com2();
 			return 0;
 		}

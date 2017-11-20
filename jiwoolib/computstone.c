@@ -19,16 +19,16 @@ void computstone(int player)
 
 	// find put the location
 
-	gotoxy(10,50);
-	printf("computer");
-	if (player == 1) {
-		printf("○");
+	if (player == 2) {
+		gotoxy(10,50);printf("computer");printf("○");sleep(1);
+		gotoxy(x,y);
 		mi[x][y/2].put = 1;
 		mi[x][y/2].color = 1;
 
 	}
-	else if (player == 2) {
-		printf("●");
+	else{
+		gotoxy(10,50);printf("computer");printf("●");sleep(1);
+		gotoxy(x,y);
 		mi[x][y/2].put = 1;
 		mi[x][y/2].color = 2;
 

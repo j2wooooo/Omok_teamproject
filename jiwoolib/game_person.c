@@ -30,7 +30,12 @@ extern int y; // 현재 키보드 커서의 위치 gotoxy 함수와 연동되어
 int istherewinner();
 void game_person() // user1과 user2가 오목게임을 하는 함수
 {
+
 	while(1){
+
+	system("claer");
+	map_modify();
+
 	char ch; // 돌 놓을 자리를 움직이기 위한 키보드 입력 받기
 	int color = 2; //  color, 1은 write 2는 black
 
@@ -93,7 +98,7 @@ void game_person() // user1과 user2가 오목게임을 하는 함수
 			break;
 
 		case put_stone:
-			if (color == 1) {
+			if (color == 1 && mi[x][y/2].put != 1) {
 				printf("○");
 				mi[x][y/2].put = 1;
 				mi[x][y/2].color = 1;
@@ -103,12 +108,12 @@ void game_person() // user1과 user2가 오목게임을 하는 함수
 				if(val == 1)
 				{
 					gotoxy(10,50);
-					printf("winner is white!\n");
+					printf("winner is black!\n");
 
 				}
 				color = 2; // 다음에 놓을 돌의 색깔을 바꾼다
 			}
-			else if (color == 2) {
+			else if (color == 2 && mi[x][y/2].put != 1) {
 				printf("●");
 				mi[x][y/2].put = 1;
 				mi[x][y/2].color = 2;
@@ -118,10 +123,21 @@ void game_person() // user1과 user2가 오목게임을 하는 함수
 				if(val == 2)
 				{
 					gotoxy(10,50);
-					printf("winner is black!\n");
+					printf("winner is white!\n");
 				}
 				color = 1; // 다음에 놓을 돌의 색깔을 바꾼다
 			}
+        gotoxy(23,1);
+        for(int i = 0; i < 20; i++)
+        {
+                for(int j = 0; j < 20; j++)
+                {
+                        printf("%d", mi[i][j].put);
+                }
+                printf("\n");
+        }
+        gotoxy(x,y);
+
 
 		}
 		if(exitflag == 1)
