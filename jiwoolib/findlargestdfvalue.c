@@ -3,13 +3,14 @@ extern struct map_info
 {
 	int put;
 	int color;
-	int value;
+	int dfvalue;
+	int atvalue;
 };
 
 struct map_info mi[20][20];
 
 
-int findlargestvalue()
+int findlargestdfvalue()
 {
 	int largest = 0;
 	int largest_index = 0;
@@ -18,13 +19,17 @@ int findlargestvalue()
 	{
 		for(j = 0; j < 20; j++)
 		{
-			if(mi[i][j].put == 0 && mi[i][j].value > largest)
+			if(mi[i][j].put == 0 && mi[i][j].dfvalue > largest)
 			{
-				largest = mi[i][j].value;
-				largest_index = i*100 + j;
+				largest = mi[i][j].dfvalue;
+				largest_index = i*100 + j*2;
 				
 			}
 		}
+	}
+	if(largest == 0)
+	{
+		return 100000;
 	}
 	return largest_index;
 }
