@@ -25,6 +25,7 @@ void checkblack(int x, int y)
 			}
 		row[x1] = black;
 		black = 0
+		}
 	}
 	for(int y1 = 0; y1 < 20; y1++){ // check row
                 for(int x1 = 0; x1 < 20; x1++){
@@ -33,8 +34,8 @@ void checkblack(int x, int y)
                         }
                 column[y1] = black;
                 black = 0
+		}
         }
-
 }
 
 void com1()
@@ -67,7 +68,7 @@ void com1()
                         	{ // if empty location
 					map_info[x][y] = BLACK;
                                 	printf("●");
-					flag = 1; // com turn
+					flag = 1;
                         	}
                 	}
                         gotoxy(x,y);
