@@ -10,22 +10,31 @@ extern int map_info[20][20];
 extern int x; int y;
 
 int black = 0; // num of black stones
-int check[20][40]; // 행과 열의 흑돌 개수를 카운트하여 배열에 저장
 
 // 행과 열의 흑돌의 개수 카운트
 void checkblack(int x, int y)
 {
-	int c = 0; // index of column
-	int x1 = x; int x2 = y;
-	for(int x1 = 0; x1 < 20; x1++){
-		for(int y1 = 0; y1 < 40; y1+=2){
+	int row[20]; // 행과 열의 흑돌 개수를 카운트하여 배열에 저장
+	int column[20];
+	int x1 = x; int x2 = y; // tmp x, y
+	
+	for(int x1 = 0; x1 < 20; x1++){ // check column
+		for(int y1 = 0; y1 < 20; y1++){
 			if(map_info[x1][y1] == 1){
 				black++;
 			}
-		check[x1][c] = black;
-		c++;
+		row[x1] = black;
 		black = 0
 	}
+	for(int y1 = 0; y1 < 20; y1++){ // check row
+                for(int x1 = 0; x1 < 20; x1++){
+                        if(map_info[x1][y1] == 1){
+                                black++;
+                        }
+                column[y1] = black;
+                black = 0
+        }
+
 }
 
 void com1()
