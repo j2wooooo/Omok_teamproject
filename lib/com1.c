@@ -24,7 +24,7 @@ void checkblack(int x, int y)
 				black++;
 			}
 		row[x1] = black;
-		black = 0
+		black = 0;
 		}
 	}
 	for(int y1 = 0; y1 < 20; y1++){ // check row
@@ -33,7 +33,7 @@ void checkblack(int x, int y)
                                 black++;
                         }
                 column[y1] = black;
-                black = 0
+                black = 0;
 		}
         }
 }
