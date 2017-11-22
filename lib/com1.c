@@ -76,5 +76,5 @@ void com1()
 			checkblack(x,y);
 			flag = 0; // user turn
 		}
-        }
+	}
 }

@@ -5,7 +5,8 @@ extern struct map_info
 {
 	int push;
 	int color;
-	int value;
+	int dfvalue;
+	int atvalue;
 };
 extern int x, y;
 struct map_info mi[20][20];
