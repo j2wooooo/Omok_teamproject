@@ -10,7 +10,8 @@ extern struct map_info
 {
 	int put;
 	int color;
-	int value;
+	int dfvalue;
+	int atvalue;
 };
 
 extern int x;

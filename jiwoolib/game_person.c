@@ -17,10 +17,12 @@ extern struct map_info
 {
 	int put;
 	int color;
-	int value;
+	int dfvalue;
+	int atvalue;
 };
 
 void mapinfoclean();
+void map_modify();
 void gotoxy(int x, int y); // 키보드 커서를 이동시켜주는 함수
 int getch(); // 문자를 입력으로 받을 수 있는 함수
 struct map_info mi[20][20]; // 오목판의 커서이동가능 범위가 들어간 map의 정보, map함수와 연동되어야 하기 때문에 전역변수로 쓴다
@@ -127,15 +129,15 @@ void game_person() // user1과 user2가 오목게임을 하는 함수
 				}
 				color = 1; // 다음에 놓을 돌의 색깔을 바꾼다
 			}
-        gotoxy(23,1);
-        for(int i = 0; i < 20; i++)
-        {
-                for(int j = 0; j < 20; j++)
-                {
-                        printf("%d", mi[i][j].put);
-                }
-                printf("\n");
-        }
+        //gotoxy(23,1);
+        //for(int i = 0; i < 20; i++)
+        //{
+         //       for(int j = 0; j < 20; j++)
+          //      {
+           //             printf("%d", mi[i][j].put);
+            //    }
+             //   printf("\n");
+        //}
         gotoxy(x,y);
 
 

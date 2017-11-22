@@ -12,7 +12,8 @@ extern struct map_info
 {
 	int put;
 	int color;
-	int value;
+	int dfvalue;
+	int atvalue;
 };
 
 void mapinfoclean();
@@ -23,7 +24,7 @@ extern int x; int y; // 현재 키보드 커서의 위치 gotoxy 함수와 연�
 
 int selectplayer();
 int istherewinner();
-void map();
+void map_modify();
 void usrputstone(int p);
 void computstone(int p);
 
@@ -38,15 +39,21 @@ void com2() // user1과 user2가 오목게임을 하는 함수
 	int color = 2; // black is first
 	int winner = 0;
 
-	map();
-	gotoxy(x,y);
-
 	if(player == 1) // user first
 	{
 		while(1)
 		{
 			usrputstone(player);
 			computstone(player);
+			printf("\n\n\n\n\n\n\n\n\n\n");
+			for(int i = 0; i < 20; i++)
+			{
+				for(int j = 0; j < 20; j++)
+				{
+					printf("%d", mi[i][j].color);
+				}
+				printf("\n");
+			}	
 
 			if(istherewinner != 0)
 			{

@@ -1,5 +1,5 @@
-libjiwoofuncs.a: game_person.o istherewinner.o map_modify.o mapinfoclean.o selectplayer.o com2.o usrputstone.o computstone.o makevaluemap.o findlargestvalue.o
-	ar rv libjiwoofuncs.a game_person.o istherewinner.o map_modify.o mapinfoclean.o makevaluemap.o findlargestvalue.o selectplayer.o com2.o usrputstone.o computstone.o
+libjiwoofuncs.a: game_person.o istherewinner.o map_modify.o mapinfoclean.o selectplayer.o com2.o usrputstone.o computstone.o makedfvaluemap.o findlargestdfvalue.o
+	ar rv libjiwoofuncs.a game_person.o istherewinner.o map_modify.o mapinfoclean.o makedfvaluemap.o findlargestdfvalue.o selectplayer.o com2.o usrputstone.o computstone.o
 
 com2.o: com2.c
 	gcc -c -g com2.c -I../include -o com2.o
@@ -10,11 +10,11 @@ usrputstone.o: usrputstone.c
 computstone.o: computstone.c
 	gcc -c -g computstone.c -I../include -o computstone.o
 
-makevauluemap.o: makevaluemap.c
-	gcc -c -g makevalue.c -I../include -o makevalue.o
+makedfvauluemap.o: makedfvaluemap.c
+	gcc -c -g makedfvalue.c -I../include -o makedfvalue.o
 
-findlargestvalue.o: findlargestvalue.c
-	gcc -c -g findlargestvalue.c -I../include -o findlargestvalue.o
+findlargestdfvalue.o: findlargestdfvalue.c
+	gcc -c -g findlargestdfvalue.c -I../include -o findlargestdfvalue.o
 
 selectplayer.o: selectplayer.c
 	gcc -c -g selectplayer.c -I../include -o selectplayer.o
