@@ -1,8 +1,5 @@
-libfuncs.a: map.o display_menu.o game_manual.o getch.o gotoxy.o com1.o
-	ar rv libfuncs.a map.o display_menu.o game_manual.o getch.o gotoxy.o com1.o
-
-com1.o: com1.c
-	gcc -c -g com1.c -I../include -o com1.o
+libfuncs.a: map.o display_menu.o game_manual.o getch.o gotoxy.o
+	ar rv libfuncs.a map.o display_menu.o game_manual.o getch.o gotoxy.o
 
 gotoxy.o: gotoxy.c
 	gcc -c -g gotoxy.c -I../include -o gotoxy.o
