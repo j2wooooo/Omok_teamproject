@@ -23,6 +23,7 @@ void computstone(int player)
 	int exitflag = 0;
 
 	// defend
+	valueclear();
 	makedfvaluemap(player);
 	int pos = findlargestdfvalue();// find put the location
 
@@ -60,8 +61,8 @@ void computstone(int player)
 		x = pos/100;
 		y = pos%100;
 	}
-	printf("\n\n%d%d%d\n",a,b,c);
-	printf("%d%d",x,y);
+	printf("\n\n%d\n",pos);
+	//printf("%d%d",x,y);
 
 	if (player == 2)
 	{
