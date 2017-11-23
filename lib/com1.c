@@ -3,17 +3,16 @@
 #include "getch.h"
 #include "gotoxy.h"
 
-#define USR_UP 65 // 방향키 up
-#define USR_DOWN 66 // 방향키 down
-#define USR_RIGHT 67 // 방향키 right
-#define USR_LEFT 68 // 방향키 left
+#define USR_UP 119 // 방향키 up
+#define USR_DOWN 97 // 방향키 down
+#define USR_RIGHT 100 // 방향키 right
+#define USR_LEFT 115 // 방향키 left
 #define PUT_STONE 32 // 돌 놓기
 
 #define BLACK 1
 #define WHITE 2
 
-extern int map_info[20][20];
-
+int mymap[20][40];
 int x; int y;
 int black = 0; // num of black stones
 
@@ -24,18 +23,25 @@ void checkblack(int x, int y)
 	int column[20];
 	int x1 = x; int x2 = y; // tmp x, y
 
+	for(int i = 0; i < 20; i++){
+		for(int j = 0; j < 40; j+=2){
+			printf("%d ", mymap[i][j]);
+		}
+		printf("\n");
+	}
+
 	for(int x1 = 0; x1 < 20; x1++){ // check column
-		for(int y1 = 0; y1 < 20; y1++){
-			if(map_info[x1][y1] == 1){
+		for(int y1 = 0; y1 < 40; y1+=2){
+			if(mymap[x1][y1] == BLACK){
 				black++;
 			}
 		row[x1] = black;
 		black = 0;
 		}
 	}
-	for(int y1 = 0; y1 < 20; y1++){ // check row
+	for(int y1 = 0; y1 < 40; y1+=2){ // check row
                 for(int x1 = 0; x1 < 20; x1++){
-                        if(map_info[x1][y1] == 1){
+                        if(mymap[x1][y1] == 1){
                                 black++;
                         }
                 column[y1] = black;
@@ -46,7 +52,7 @@ void checkblack(int x, int y)
 
 	for(int i = 0; i < 20; i++)
 		printf("%d ", row[i]);
-	printf(\n);
+	printf("\n");
 	for(int i = 0; i < 20; i++) 
                 printf("%d ", column[i]);
 }
@@ -61,28 +67,19 @@ void com1()
 			dir = getch();
                 	switch (dir) {
 
-                	case USR_UP:
-                        	if(x-1 > 1) x-=1; break;
-
-                	case USR_LEFT:
-                        	if(y-2 > 1) y -= 2; break;
-
-                	case USR_DOWN:
-                        	if(x+1 < 20) x += 1; break;
-
-                	case USR_RIGHT:
-                        	if(y+2 < 40) y += 2; break;
+                	case USR_UP: if(x-1 > 1) x-=1; break;
+                	case USR_LEFT: if(y-2 > 1) y -= 2; break;
+                	case USR_DOWN: if(x+1 < 20) x += 1; break;
+                	case USR_RIGHT: if(y+2 < 40) y += 2; break;
 
                 	case PUT_STONE:
-                       		if (map_info[x][y] == 0) // if empty location
+                       		if (mymap[x][y] == 0) // if empty location
                         	{
-					map_info[x][y] = BLACK;
+					mymap[x][y] = BLACK;
                                 	printf("●");
 					flag = 1; // com turn
                         	}
                 	}
-                        //gotoxy(x,y);
-
 		}
 		else // com mode
 		{ 
