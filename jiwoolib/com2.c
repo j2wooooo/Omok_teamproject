@@ -53,10 +53,18 @@ void com2() // user1과 user2가 오목게임을 하는 함수
 					printf("%d", mi[i][j].color);
 				}
 				printf("\n");
-			}	
+			}
+			int winner = 0;
+			winner = istherewinner();
 
-			if(istherewinner != 0)
+			if(winner == 0){}
+			else if(winner == 1)
 			{
+				printf("winner is user!\n");
+			}
+			else
+			{
+				printf("winner is computer!\n");
 
 			}
 		}
@@ -68,8 +76,17 @@ void com2() // user1과 user2가 오목게임을 하는 함수
 			computstone(player);
 			usrputstone(player);
 
-			if(istherewinner != 0)
+			int winner = 0;
+			winner = istherewinner();
+
+			if(winner == 0){}
+			else if(winner == 1)
 			{
+				printf("winner is computer!\n");
+			}
+			else
+			{
+				printf("winner is user!\n");
 
 			}
 		}
