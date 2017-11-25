@@ -13,12 +13,12 @@ void checkblack(int x, int y)
         int x1 = x; int x2 = y; // tmp x, y
 	
 	// print map_info
-        for(int i = 0; i < 20; i++)
-	{
-               for(int j = 0; j < 20; j++)
-                        printf("%d ", map_info[i][j]);
-                printf("\n");
-        }
+        //for(int i = 0; i < 20; i++)
+	//{
+        //       for(int j = 0; j < 20; j++)
+        //                printf("%d ", map_info[i][j]);
+        //        printf("\n");
+        //}
 
         for(int x1 = 0; x1 < 20; x1++) // check column
 	{
@@ -42,9 +42,9 @@ void checkblack(int x, int y)
         }
 
 	// print row and column
-        for(int i = 0; i < 20; i++)
-                printf("%d ", row[i]);
-	printf("\n");
-        for(int i = 0; i < 20; i++) 
-                printf("%d ", column[i]);
+        //for(int i = 0; i < 20; i++)
+        //        printf("%d ", row[i]);
+	//printf("\n");
+        //for(int i = 0; i < 20; i++) 
+        //        printf("%d ", column[i]);
 }

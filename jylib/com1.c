@@ -12,7 +12,7 @@
 #define BLACK -2
 #define WHITE 2
 
-extern int map_info[20][40];
+extern int map_info[20][20];
 extern int x; extern int y;
 
 void com1()
@@ -25,10 +25,10 @@ void com1()
 			dir = getch();
                 	switch (dir) {
 
-                	case USR_UP: x -= 1; break;
-                	case USR_LEFT: y -= 2; break;
-                	case USR_DOWN: x += 1; break;
-                	case USR_RIGHT: y += 2; break;
+                	case USR_UP: if(x-1 > 1) x -= 1; break;
+                	case USR_LEFT: if(y-2 > 1) y -= 2; break;
+                	case USR_DOWN: if(x+1 < 20) x += 1; break;
+                	case USR_RIGHT: if(y+2 < 40) y += 2; break;
 
                 	case PUT_STONE:
                        		if (map_info[x][y/2] == 0) // if empty location
@@ -37,7 +37,7 @@ void com1()
                                 	printf("●");
 					flag = 1; // com turn
                         	}
-                	}
+               		}
 			gotoxy(x, y);
 		}
 		else // com mode
