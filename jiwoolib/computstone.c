@@ -14,6 +14,7 @@ extern int y;
 void gotoxy(int x, int y);
 
 void makedfvaluemap(int player);
+void makeatvaluemap(int player);
 int findlargestdfvalue();
 
 extern struct map_info mi[20][20];
@@ -24,6 +25,7 @@ void computstone(int player)
 
 	// defend
 	valueclear();
+	makeatvaluemap(player);
 	makedfvaluemap(player);
 	int pos = findlargestdfvalue();// find put the location
 
