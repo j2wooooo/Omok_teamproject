@@ -38,6 +38,7 @@ void com1()
 					flag = 1; // com turn
                         	}
                 	}
+			gotoxy(x, y);
 		}
 		else // com mode
 		{ 
