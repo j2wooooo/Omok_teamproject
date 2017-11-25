@@ -1,6 +1,12 @@
+#include "../include/gotoxy.h"
 #include<stdio.h>
 #include<stdlib.h>
-extern struct map_info
+#include "../jwinclude/makedfvaluemap.h"
+#include "../jwinclude/makeatvaluemap.h"
+#include "../jwinclude/findlargestdfvalue.h"
+#include "../jwinclude/valueclear.h"
+
+struct map_info
 {
 	int put;
 	int color;
@@ -10,12 +16,6 @@ extern struct map_info
 
 extern int x;
 extern int y;
-
-void gotoxy(int x, int y);
-
-void makedfvaluemap(int player);
-void makeatvaluemap(int player);
-int findlargestdfvalue();
 
 extern struct map_info mi[20][20];
 
@@ -68,7 +68,7 @@ void computstone(int player)
 
 	if (player == 2)
 	{
-		gotoxy(10,50);printf("computer");printf("○");sleep(1);
+		//gotoxy(10,50);printf("computer");printf("○");sleep(1);
 		gotoxy(x,y);
 		printf("○");
 		mi[x][y/2].put = 1;

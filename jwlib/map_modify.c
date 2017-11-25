@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "map.h"
 
-extern struct map_info
+struct map_info
 {
 	int put; // 돌을 놓을 수 있는 자리인지 확인하는 변수
 	int color; // 돌이 있다면 무슨 색 돌이 있는지 확인하는 변수
@@ -10,7 +9,7 @@ extern struct map_info
 	int atvalue;
 };
 
-struct map_info mi[20][20];
+extern struct map_info mi[20][20];
 
 void map_modify()
 {

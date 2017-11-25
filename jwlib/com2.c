@@ -1,14 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "getch.h"
+#include "../include/getch.h" // 문자를 입력으로 받을 수 있는 함수
+#include "../include/gotoxy.h" // 키보드 커서를 이동시켜주는 함수
+#include "../jwinclude/mapinfoclean.h"
+#include "../jwinclude/selectplayer.h"
+#include "../jwinclude/istherewinner.h"
+#include "../jwinclude/map_modify.h"
+#include "../jwinclude/usrputstone.h"
+#include "../jwinclude/computstone.h"
 
-#define usr_UP 65 // 방향키 up
-#define usr_DOWN 66 // 방향키 down
-#define usr_RIGHT 67 // 방향키 right
-#define usr_LEFT 68 // 방향키 left
-
-#define put_stone 32// 돌 놓기
-extern struct map_info
+struct map_info
 {
 	int put;
 	int color;
@@ -16,17 +17,8 @@ extern struct map_info
 	int atvalue;
 };
 
-void mapinfoclean();
-void gotoxy(int x, int y); // 키보드 커서를 이동시켜주는 함수
-int getch(); // 문자를 입력으로 받을 수 있는 함수
-struct map_info mi[20][20]; // 오목판의 커서이동가능 범위가 들어간 map의 정보, map함수와 연동되어야 하기 때문에 전역변수로 쓴다
+extern struct map_info mi[20][20]; // 오목판의 커서이동가능 범위가 들어간 map의 정보, map함수와 연동되어야 하기 때문에 전역변수로 쓴다
 extern int x; int y; // 현재 키보드 커서의 위치 gotoxy 함수와 연동되어야 하기 때문에 전역변수로 쓴다
-
-int selectplayer();
-int istherewinner();
-void map_modify();
-void usrputstone(int p);
-void computstone(int p);
 
 void com2() // user1과 user2가 오목게임을 하는 함수
 {
@@ -45,15 +37,15 @@ void com2() // user1과 user2가 오목게임을 하는 함수
 		{
 			usrputstone(player);
 			computstone(player);
-			printf("\n\n\n\n\n\n\n\n\n\n");
-			for(int i = 0; i < 20; i++)
-			{
-				for(int j = 0; j < 20; j++)
-				{
-					printf("%d", mi[i][j].color);
-				}
-				printf("\n");
-			}
+			//printf("\n\n\n\n\n\n\n\n\n\n");
+			//for(int i = 0; i < 20; i++)
+			//{
+			//	for(int j = 0; j < 20; j++)
+			//	{
+			//		printf("%d", mi[i][j].color);
+			//	}
+			//	printf("\n");
+			//}
 			int winner = 0;
 			winner = istherewinner();
 

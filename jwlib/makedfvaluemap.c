@@ -1,5 +1,5 @@
 #include<stdio.h>
-extern struct map_info
+struct map_info
 {
 	int put;
 	int color;
