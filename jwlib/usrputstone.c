@@ -1,12 +1,16 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include "../include/gotoxy.h"
+#include "../include/getch.h"
+#include "../jwinclude/mapinfoclean.h"
+
 #define usr_UP 65 // 방향키 up
 #define usr_DOWN 66 // 방향키 down
 #define usr_RIGHT 67 // 방향키 right
 #define usr_LEFT 68 // 방향키 left
 
 #define put_stone 32// 돌 놓기
-extern struct map_info
+struct map_info
 {
 	int put;
 	int color;
@@ -16,10 +20,6 @@ extern struct map_info
 
 extern int x;
 extern int y;
-void mapinfoclean();
-void map();
-void gotoxy(int x,int y);
-int getch();
 
 extern struct map_info mi[20][20];
 

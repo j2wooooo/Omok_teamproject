@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-int getch();
+#include "../include/getch.h"
 
 int selectplayer()
 {

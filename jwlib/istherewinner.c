@@ -1,15 +1,15 @@
 #include<stdio.h>
 
-void gotoxy();
-extern struct map_info
+struct map_info
 {
 	int push;
 	int color;
 	int dfvalue;
 	int atvalue;
 };
+
 extern int x, y;
-struct map_info mi[20][20];
+extern struct map_info mi[20][20];
 
 int istherewinner()
 {

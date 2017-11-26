@@ -1,4 +1,4 @@
-DIRS = lib jiwoolib jylib app
+DIRS = lib jwlib jylib app
 .PHONY : all clean
 
 all:

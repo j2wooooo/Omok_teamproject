@@ -1,5 +1,6 @@
 #include<stdio.h>
-extern struct map_info
+
+struct map_info
 {
 	int put;
 	int color;
@@ -7,7 +8,7 @@ extern struct map_info
 	int atvalue;
 };
 
-struct map_info mi[20][20];
+extern struct map_info mi[20][20];
 
 
 int findlargestdfvalue()
