@@ -4,13 +4,13 @@
 #define WHITE 2
 
 extern int map_info[20][20];
-int black = 0; // num of black stones
+int row[20]; // 행과 열의 흑돌 개수를 카운트하여 배열에 저장
+int column[20];
 
-void checkblack(int x, int y)
+void checkblack()
 {
-        int row[20]; // 행과 열의 흑돌 개수를 카운트하여 배열에 저장
-        int column[20];
-        int x1 = x; int x2 = y; // tmp x, y
+	int black = 0; // num of black stones
+        int x1, y1;
 	
 	// print map_info
         //for(int i = 0; i < 20; i++)
@@ -20,19 +20,19 @@ void checkblack(int x, int y)
         //        printf("\n");
         //}
 
-        for(int x1 = 0; x1 < 20; x1++) // check column
+        for(x1 = 0; x1 < 20; x1++) // check column
 	{
-                for(int y1 = 0; y1 < 20; y1++)
+                for(y1 = 0; y1 < 20; y1++)
 		{
                         if(map_info[x1][y1] == BLACK)
-                                black++;
+				black++;
                 }
 		row[x1] = black;
                 black = 0;
 	}
-        for(int y1 = 0; y1 < 20; y1++) // check row
+        for(y1 = 0; y1 < 20; y1++) // check row
 	{
-                for(int x1 = 0; x1 < 20; x1++)
+                for(x1 = 0; x1 < 20; x1++)
 		{
                         if(map_info[x1][y1] == BLACK)
                                 black++;

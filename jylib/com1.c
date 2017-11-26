@@ -13,7 +13,10 @@
 #define WHITE 2
 
 extern int map_info[20][20];
-extern int x; extern int y;
+extern int x;
+extern int y;
+extern int row[20];
+extern int column[20];
 
 void com1()
 {
@@ -42,7 +45,19 @@ void com1()
 		}
 		else // com mode
 		{ 
-			checkblack(x,y);
+			checkblack();
+
+			gotoxy(25, 0); // print cur status
+			for(int i = 0; i < 20; i++)
+				printf("%d ", row[i]);
+			printf("\n");
+			for(int i = 0; i < 20; i++)
+				printf("%d ", column[i]);
+
+			mode();
+			//if(mode() == 0) defend();
+			//else		attack();
+
 			flag = 0; // user turn
 		}
 	}
