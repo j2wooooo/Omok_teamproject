@@ -4,6 +4,7 @@
 #include "../jwinclude/makedfvaluemap.h"
 #include "../jwinclude/makeatvaluemap.h"
 #include "../jwinclude/findlargestdfvalue.h"
+#include "../jwinclude/findlargestatvalue.h"
 #include "../jwinclude/valueclear.h"
 
 struct map_info
@@ -27,7 +28,19 @@ void computstone(int player)
 	valueclear();
 	makeatvaluemap(player);
 	makedfvaluemap(player);
-	int pos = findlargestdfvalue();// find put the location
+	int dfv = findlargestdfvalue();// find put the location
+	//int atv = findlargestatvalue();
+	//int pos = 0;
+
+	//if(mi[dfv/100][(dfv%100)/2].dfvalue >= mi[atv/100][(atv%100)/2].atvalue)
+	//{
+		int pos = dfv;
+	//}
+	//else
+	//{
+	//	pos = atv;
+	//}
+
 
 	// atteck
 			int a=1;

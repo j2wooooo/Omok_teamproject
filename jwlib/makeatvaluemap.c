@@ -16,8 +16,27 @@ void makeatvaluemap(int player)
 		{
 			for(int j = 0; j < 20; j++)
 			{
+
+				// b b b b h
+				if(i-4 >= 0 && j-4 >= 0 && mi[i-4][j-4].color == 1 && mi[i-3][j-3].color == 1 && mi[i-2][j-2].color == 1 && mi[i-1][j-1].color == 1 && mi[i][j].color == 0)
+					mi[i][j].atvalue = mi[i][j].atvalue+2;
+				else if(i-4 >= 0 && mi[i-4][j].color == 1 && mi[i-3][j].color == 1 && mi[i-2][j].color == 1 && mi[i-1][j].color == 1 && mi[i][j].color == 0)
+					mi[i][j].atvalue = mi[i][j].atvalue+2;
+				else if(i-4 >= 0 && j+4 < 20 && mi[i-4][j+4].color == 1 && mi[i-3][j+3].color == 1 && mi[i-2][j+2].color == 1 && mi[i-1][j+1].color == 1 && mi[i][j].color == 0)
+                                        mi[i][j].atvalue = mi[i][j].atvalue+2;
+				else if(j-4 >= 0 && mi[i][j-4].color == 1 && mi[i][j-3].color == 1 && mi[i][j-2].color == 1 && mi[i][j-1].color == 1 && mi[i][j].color == 0)
+                                        mi[i][j].atvalue = mi[i][j].atvalue+2;
+				else if(j+4 < 20 && mi[i][j+4].color == 1 && mi[i][j+3].color == 1 && mi[i][j+2].color == 1 && mi[i][j+1].color == 1 && mi[i][j].color == 0)
+                                        mi[i][j].atvalue = mi[i][j].atvalue+2;
+				else if(i+4 < 20 && j-4 >= 0 && mi[i+4][j-4].color == 1 && mi[i+3][j-3].color == 1 && mi[i+2][j-2].color == 1 && mi[i+1][j-1].color == 1 && mi[i][j].color == 0)
+                                        mi[i][j].atvalue = mi[i][j].atvalue+2;
+				else if(i+4 < 20 && mi[i+4][j].color == 1 && mi[i+3][j].color == 1 && mi[i+2][j].color == 1 && mi[i+1][j].color == 1 && mi[i][j].color == 0)
+                                        mi[i][j].atvalue = mi[i][j].atvalue+2;
+				else if(i+4 < 20 && j+4 < 20 && mi[i+4][j+4].color == 1 && mi[i+3][j+3].color == 1 && mi[i+2][j+2].color == 1 && mi[i+1][j+1].color == 1 && mi[i][j].color == 0)
+                                        mi[i][j].atvalue = mi[i][j].atvalue+2;
+
 				// b b b h
-				if(i-3 >= 0 && j-3 >= 0 && mi[i-3][j-3].color == 1 && mi[i-2][j-2].color == 1 && mi[i-1][j-1].color == 1 && mi[i][j].color == 0)
+				else if(i-3 >= 0 && j-3 >= 0 && mi[i-3][j-3].color == 1 && mi[i-2][j-2].color == 1 && mi[i-1][j-1].color == 1 && mi[i][j].color == 0)
 					mi[i][j].atvalue = mi[i][j].atvalue+1;
 				else if(i-3 >= 0 && mi[i-3][j].color == 1 && mi[i-2][j].color == 1 && mi[i-1][j].color == 1 && mi[i][j].color == 0)
 					mi[i][j].atvalue = mi[i][j].atvalue+1;
@@ -44,8 +63,27 @@ void makeatvaluemap(int player)
 		{
 			for(int j = 0; j < 20; j++)
 			{
+
+// w w w w h
+				if(i-4 >= 0 && j-4 >= 0 && mi[i-4][j-4].color == 2 && mi[i-3][j-3].color == 2 && mi[i-2][j-2].color == 2 && mi[i-1][j-1].color == 2 && mi[i][j].color == 0)
+					mi[i][j].atvalue = mi[i][j].atvalue+2;
+				else if(i-4 >= 0 && mi[i-4][j].color == 2 && mi[i-3][j].color == 2 && mi[i-2][j].color == 2 && mi[i-1][j].color == 2 && mi[i][j].color == 0)
+					mi[i][j].atvalue = mi[i][j].atvalue+2;
+				else if(i-4 >= 0 && j+4 < 20 && mi[i-4][j+4].color == 2 && mi[i-3][j+3].color == 2 && mi[i-2][j+2].color == 2 && mi[i-1][j+1].color == 2 && mi[i][j].color == 0)
+                                        mi[i][j].atvalue = mi[i][j].atvalue+2;
+				else if(j-4 >= 0 && mi[i][j-4].color == 2 && mi[i][j-3].color == 2 && mi[i][j-2].color == 2 && mi[i][j-1].color == 2 && mi[i][j].color == 0)
+                                        mi[i][j].atvalue = mi[i][j].atvalue+2;
+				else if(j+4 < 20 && mi[i][j+4].color == 2 && mi[i][j+3].color == 2 && mi[i][j+2].color == 2 && mi[i][j+1].color == 2 && mi[i][j].color == 0)
+                                        mi[i][j].atvalue = mi[i][j].atvalue+2;
+				else if(i+4 < 20 && j-4 >= 0 && mi[i+4][j-4].color == 2 && mi[i+3][j-3].color == 2 && mi[i+2][j-2].color == 2 && mi[i+1][j-1].color == 2 && mi[i][j].color == 0)
+                                        mi[i][j].atvalue = mi[i][j].atvalue+2;
+				else if(i+4 < 20 && mi[i+4][j].color == 2 && mi[i+3][j].color == 2 && mi[i+2][j].color == 2 && mi[i+1][j].color == 2 && mi[i][j].color == 0)
+                                        mi[i][j].atvalue = mi[i][j].atvalue+2;
+				else if(i+4 < 20 && j+4 < 20 && mi[i+4][j+4].color == 2 && mi[i+3][j+3].color == 2 && mi[i+2][j+2].color == 2 && mi[i+1][j+1].color == 1 && mi[i][j].color == 0)
+                                        mi[i][j].atvalue = mi[i][j].atvalue+2;
+
 				// w w w h
-				if(i-3 >= 0 && j-3 >= 0 && mi[i-3][j-3].color == 2 && mi[i-2][j-2].color == 2 && mi[i-1][j-1].color == 2 && mi[i][j].color == 0)
+				else if(i-3 >= 0 && j-3 >= 0 && mi[i-3][j-3].color == 2 && mi[i-2][j-2].color == 2 && mi[i-1][j-1].color == 2 && mi[i][j].color == 0)
                                         mi[i][j].atvalue = mi[i][j].atvalue+1;
                                 else if(i-3 >= 0 && mi[i-3][j].color == 2 && mi[i-2][j].color == 2 && mi[i-1][j].color == 2 && mi[i][j].color == 0)
                                         mi[i][j].atvalue = mi[i][j].atvalue+1;
