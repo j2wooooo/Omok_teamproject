@@ -1,6 +1,7 @@
 #include "../include/gotoxy.h"
 #include<stdio.h>
 #include<stdlib.h>
+#include<unistd.h>
 #include "../jwinclude/makedfvaluemap.h"
 #include "../jwinclude/makeatvaluemap.h"
 #include "../jwinclude/findlargestdfvalue.h"
