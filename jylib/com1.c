@@ -54,9 +54,9 @@ void com1()
 			for(int i = 0; i < 20; i++)
 				printf("%d ", column[i]);
 
-			mode();
-			//if(mode() == 0) defend();
-			//else		attack();
+			mode(); gotoxy(27,0);
+			if(mode() == 0) printf("defend");//defend();
+			else		attack();
 
 			flag = 0; // user turn
 		}

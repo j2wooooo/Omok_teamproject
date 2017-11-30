@@ -1,6 +1,9 @@
 
-libjiwoofuncs.a: com1.o checkblack.o mode.o
-	ar rv libjyfuncs.a com1.o checkblack.o mode.o
+libjiwoofuncs.a: *.o
+	ar rv libjyfuncs.a *.o
+
+attack.o: attack.c
+	gcc -c -g attack.c -I../include -o attack.o
 
 mode.o: mode.c
 	gcc -c -g mode.c -I../include -o mode.o
