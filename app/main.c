@@ -37,7 +37,6 @@ int main(void)
 		else if(menu == 4) //사람 대 컴퓨터 중급모드
 		{
 			com2();
-			return 0;
 		}
 		else if(menu == 5) //사람 대 컴퓨터 고급모드
 		{
