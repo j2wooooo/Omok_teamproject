@@ -76,6 +76,53 @@ void makeatvaluemap(int player)
 
 
 
+
+// x b b b h +2
+				else if(i-4 >= 0 && j-4 >= 0 && mi[i-4][j-4].color == 0 && mi[i-3][j-3].color == 1 && mi[i-2][j-2].color == 1 && mi[i-1][j-1].color == 1 && mi[i][j].color == 0)
+					mi[i][j].dfvalue = mi[i][j].dfvalue+2;
+				else if(i-4 >= 0 && mi[i-4][j].color == 0 && mi[i-3][j].color == 1 && mi[i-2][j].color == 1 && mi[i-1][j].color == 1 && mi[i][j].color == 0)
+					mi[i][j].dfvalue = mi[i][j].dfvalue+2;
+				else if(i-4 >= 0 && j+4 < 20 && mi[i-4][j+4].color == 0 && mi[i-3][j+3].color == 1 && mi[i-2][j+2].color == 1 && mi[i-1][j+1].color == 1 && mi[i][j].color == 0)
+					mi[i][j].dfvalue = mi[i][j].dfvalue+2;
+				else if(j-4 >= 0 && mi[i][j-4].color == 0 && mi[i][j-3].color == 1 && mi[i][j-2].color == 1 && mi[i][j-1].color == 1 && mi[i][j].color == 0)
+					mi[i][j].dfvalue = mi[i][j].dfvalue+2;
+				else if(j+4 < 20 && mi[i][j+4].color == 0 && mi[i][j+3].color == 1 && mi[i][j+2].color == 1 && mi[i][j+1].color == 1 && mi[i][j].color == 0)
+					mi[i][j].dfvalue = mi[i][j].dfvalue+2;
+				else if(i+4 < 20 && j-4 >= 0 && mi[i+4][j-4].color == 0 && mi[i+3][j-3].color == 1 && mi[i+2][j-2].color == 1 && mi[i+1][j-1].color == 1 && mi[i][j].color == 0)
+					mi[i][j].dfvalue = mi[i][j].dfvalue+2;
+				else if(i+4 < 20 && mi[i+4][j].color == 0 && mi[i+3][j].color == 1 && mi[i+2][j].color == 1 && mi[i+1][j].color == 1 && mi[i][j].color == 0)
+					mi[i][j].dfvalue = mi[i][j].dfvalue+2;
+				else if(i+4 < 20 && j+4 < 20 && mi[i+4][j+4].color == 0 && mi[i+3][j+3].color == 1 && mi[i+2][j+2].color == 1 && mi[i+1][j+1].color == 1 && mi[i][j].color == 0)
+					mi[i][j].dfvalue = mi[i][j].dfvalue+2;
+
+
+
+
+				// x b b h b +2
+				else if(i-3 >= 0 && i+1 < 20 && j-3 >= 0 && j+1 < 20 && mi[i-3][j-3].color == 0 && mi[i-2][j-2].color == 1 && mi[i-1][j-1].color == 1 && mi[i][j].color == 0 && mi[i+1][j+1].color == 1)
+					mi[i][j].dfvalue = mi[i][j].dfvalue+2;
+				else if(i-3 >= 0 && i+1 < 20 && mi[i-3][j].color == 0 && mi[i-2][j].color == 1 && mi[i-1][j].color == 1 && mi[i][j].color == 0 && mi[i+1][j].color == 1)
+					mi[i][j].dfvalue = mi[i][j].dfvalue+2;
+				else if(i-3 >= 0 && i+1 < 20 && j-1 >= 0 && j+3 < 20 && mi[i-3][j+3].color == 0 && mi[i-2][j+2].color == 1 && mi[i-1][j+1].color == 1 && mi[i][j].color == 0 && mi[i+1][j-1].color == 1)
+					mi[i][j].dfvalue = mi[i][j].dfvalue+2;
+				else if(j-3 >= 0 && j+1 < 20 && mi[i][j-3].color == 0 && mi[i][j-2].color == 1 && mi[i][j-1].color == 1 && mi[i][j].color == 0 && mi[i][j+1].color == 1)
+					mi[i][j].dfvalue = mi[i][j].dfvalue+2;
+				else if(j-1 >= 0 && j+3 < 20 && mi[i][j+3].color == 0 && mi[i][j+2].color == 1 && mi[i][j+1].color == 1 && mi[i][j].color == 0 && mi[i][j-1].color == 1)
+					mi[i][j].dfvalue = mi[i][j].dfvalue+2;
+				else if(i-1 >= 0 && i+3 < 20 && j-3 >= 0 && j+1 < 20 && mi[i+3][j-3].color == 1 && mi[i+2][j-2].color == 1 && mi[i+1][j-1].color == 1 && mi[i][j].color == 0 && mi[i-1][j+1].color == 1)
+					mi[i][j].dfvalue = mi[i][j].dfvalue+2;
+				else if(i-1 >= 0 && i+3 < 20 && mi[i+3][j].color == 0 && mi[i+2][j].color == 1 && mi[i+1][j].color == 1 && mi[i][j].color == 0 && mi[i-1][j].color == 1)
+					mi[i][j].dfvalue = mi[i][j].dfvalue+2;
+				else if(i-1 >= 0 && i+3 < 20 && j-1 >= 0 && j+3 < 20 && mi[i+3][j+3].color == 0 && mi[i+2][j+2].color == 1 && mi[i+1][j+1].color == 1 && mi[i][j].color == 0 && mi[i-1][j-1].color == 1)
+					mi[i][j].dfvalue = mi[i][j].dfvalue+2;
+
+
+
+
+
+
+
+
 				// b b b h
 				else if(i-3 >= 0 && j-3 >= 0 && mi[i-3][j-3].color == 1 && mi[i-2][j-2].color == 1 && mi[i-1][j-1].color == 1 && mi[i][j].color == 0)
 					mi[i][j].atvalue = mi[i][j].atvalue+1;
@@ -193,6 +240,53 @@ void makeatvaluemap(int player)
 					mi[i][j].dfvalue = mi[i][j].dfvalue+3;
 				else if(j-2 >= 0 && j+2 < 20 && mi[i][j-2].color == 2 && mi[i][j-1].color == 2 && mi[i][j].color == 0 && mi[i][j+1].color == 2 && mi[i][j+2].color == 2)
 					mi[i][j].dfvalue = mi[i][j].dfvalue+3;
+
+
+
+
+
+
+
+// x w w w h +2
+				else if(i-4 >= 0 && j-4 >= 0 && mi[i-4][j-4].color == 0 && mi[i-3][j-3].color == 2 && mi[i-2][j-2].color == 2 && mi[i-1][j-1].color == 2 && mi[i][j].color == 0)
+					mi[i][j].dfvalue = mi[i][j].dfvalue+2;
+				else if(i-4 >= 0 && mi[i-4][j].color == 0 && mi[i-3][j].color == 2 && mi[i-2][j].color == 2 && mi[i-1][j].color == 2 && mi[i][j].color == 0)
+					mi[i][j].dfvalue = mi[i][j].dfvalue+2;
+				else if(i-4 >= 0 && j+4 < 20 && mi[i-4][j+4].color == 0 && mi[i-3][j+3].color == 2 && mi[i-2][j+2].color == 2 && mi[i-1][j+1].color == 2 && mi[i][j].color == 0)
+					mi[i][j].dfvalue = mi[i][j].dfvalue+2;
+				else if(j-4 >= 0 && mi[i][j-4].color == 0 && mi[i][j-3].color == 2 && mi[i][j-2].color == 2 && mi[i][j-1].color == 2 && mi[i][j].color == 0)
+					mi[i][j].dfvalue = mi[i][j].dfvalue+2;
+				else if(j+4 < 20 && mi[i][j+4].color == 0 && mi[i][j+3].color == 2 && mi[i][j+2].color == 2 && mi[i][j+1].color == 2 && mi[i][j].color == 0)
+					mi[i][j].dfvalue = mi[i][j].dfvalue+2;
+				else if(i+4 < 20 && j-4 >= 0 && mi[i+4][j-4].color == 0 && mi[i+3][j-3].color == 2 && mi[i+2][j-2].color == 2 && mi[i+1][j-1].color == 2 && mi[i][j].color == 0)
+					mi[i][j].dfvalue = mi[i][j].dfvalue+2;
+				else if(i+4 < 20 && mi[i+4][j].color == 0 && mi[i+3][j].color == 2 && mi[i+2][j].color == 2 && mi[i+1][j].color == 2 && mi[i][j].color == 0)
+					mi[i][j].dfvalue = mi[i][j].dfvalue+2;
+				else if(i+4 < 20 && j+4 < 20 && mi[i+4][j+4].color == 0 && mi[i+3][j+3].color == 2 && mi[i+2][j+2].color == 2 && mi[i+1][j+1].color == 2 && mi[i][j].color == 0)
+					mi[i][j].dfvalue = mi[i][j].dfvalue+2;
+
+
+
+				// x w w h w +2
+				else if(i-3 >= 0 && i+1 < 20 && j-3 >= 0 && j+1 < 20 && mi[i-3][j-3].color == 0 && mi[i-2][j-2].color == 2 && mi[i-1][j-1].color == 2 && mi[i][j].color == 0 && mi[i+1][j+1].color == 2)
+					mi[i][j].dfvalue = mi[i][j].dfvalue+2;
+				else if(i-3 >= 0 && i+1 < 20 && mi[i-3][j].color == 0 && mi[i-2][j].color == 2 && mi[i-1][j].color == 2 && mi[i][j].color == 0 && mi[i+1][j].color == 2)
+					mi[i][j].dfvalue = mi[i][j].dfvalue+2;
+				else if(i-3 >= 0 && i+1 < 20 && j-1 >= 0 && j+3 < 20 && mi[i-3][j+3].color == 0 && mi[i-2][j+2].color == 2 && mi[i-1][j+1].color == 2 && mi[i][j].color == 0 && mi[i+1][j-1].color == 2)
+					mi[i][j].dfvalue = mi[i][j].dfvalue+2;
+				else if(j-3 >= 0 && j+1 < 20 && mi[i][j-3].color == 0 && mi[i][j-2].color == 2 && mi[i][j-1].color == 2 && mi[i][j].color == 0 && mi[i][j+1].color == 2)
+					mi[i][j].dfvalue = mi[i][j].dfvalue+2;
+				else if(j-1 >= 0 && j+3 < 20 && mi[i][j+3].color == 0 && mi[i][j+2].color == 2 && mi[i][j+1].color == 2 && mi[i][j].color == 0 && mi[i][j-1].color == 2)
+					mi[i][j].dfvalue = mi[i][j].dfvalue+2;
+				else if(i-1 >= 0 && i+3 < 20 && j-3 >= 0 && j+1 < 20 && mi[i+3][j-3].color == 0 && mi[i+2][j-2].color == 2 && mi[i+1][j-1].color == 2 && mi[i][j].color == 0 && mi[i-1][j+1].color == 2)
+					mi[i][j].dfvalue = mi[i][j].dfvalue+2;
+				else if(i-1 >= 0 && i+3 < 20 && mi[i+3][j].color == 0 && mi[i+2][j].color == 2 && mi[i+1][j].color == 2 && mi[i][j].color == 0 && mi[i-1][j].color == 2)
+					mi[i][j].dfvalue = mi[i][j].dfvalue+2;
+				else if(i-1 >= 0 && i+3 < 20 && j-1 >= 0 && j+3 < 20 && mi[i+3][j+3].color == 0 && mi[i+2][j+2].color == 2 && mi[i+1][j+1].color == 2 && mi[i][j].color == 0 && mi[i-1][j-1].color == 2)
+					mi[i][j].dfvalue = mi[i][j].dfvalue+2;
+
+
+
 
 
 
