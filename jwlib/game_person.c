@@ -98,14 +98,14 @@ void game_person() // user1과 user2가 오목게임을 하는 함수
 			break;
 
 		case put_stone:
-			if (color == 1 && mi[x][y/2].put != 1) {
+			if (color == 1 && mi[x][y/2].put != 1) { // no stone and put stone color black
 				printf("○");
-				mi[x][y/2].put = 1;
-				mi[x][y/2].color = 1;
+				mi[x][y/2].put = 1; // cur location stone put
+				mi[x][y/2].color = 1; // cur location stone color black
 
-				int val = istherewinner();
+				int val = istherewinner(); // fine winner
 
-				if(val == 1)
+				if(val == 1) // winner is black
 				{
 					gotoxy(10,50);
 					printf("winner is black!\n");
@@ -113,14 +113,14 @@ void game_person() // user1과 user2가 오목게임을 하는 함수
 				}
 				color = 2; // 다음에 놓을 돌의 색깔을 바꾼다
 			}
-			else if (color == 2 && mi[x][y/2].put != 1) {
+			else if (color == 2 && mi[x][y/2].put != 1) { // no stone and put stone color white
 				printf("●");
-				mi[x][y/2].put = 1;
-				mi[x][y/2].color = 2;
+				mi[x][y/2].put = 1; // cur location put stone
+				mi[x][y/2].color = 2; // cur location steon color is white
 
-				int val = istherewinner();
+				int val = istherewinner(); // find winner
 
-				if(val == 2)
+				if(val == 2) // winner is white
 				{
 					gotoxy(10,50);
 					printf("winner is white!\n");
@@ -140,21 +140,21 @@ void game_person() // user1과 user2가 오목게임을 하는 함수
 
 
 		}
-		if(exitflag == 1)
+		if(exitflag == 1) // regame
 		{
 			x=10, y=10;
 			break;
 		}
-		else if(exitflag == 2)
+		else if(exitflag == 2) // quit
 		{
 			x=10, y=10;
-			exitflag = 0;
+			exitflag = 0; // quit flag on
 			break;
 		}
 		gotoxy(x,y); // 키보드커서의 위치를 바꾸는 키보드입력이 들어왔다면 커서의 위치를 바꾼다
 		//printf("%d %d\n",x,y);
 	}
-	if(exitflag == 0)
+	if(exitflag == 0) // quit
 	{
 		break;
 	}
