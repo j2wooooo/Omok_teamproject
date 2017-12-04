@@ -36,14 +36,15 @@ void computstone(int player)
 
 	// atteck
 	printf("\n\n\n\n\n\n\n\n\n");
-	for(int i = 0; i < 20; i++)
-	{
-		for(int j = 0; j < 20; j++)
-		{
-			printf("%d", mi[i][j].color);
-		}
-		printf("\n");
-	}
+	//printf("%d\n", atv);
+	//for(int i = 0; i < 20; i++)
+	//{
+//		for(int j = 0; j < 20; j++)
+//		{
+//			printf("%d", mi[i][j].color);
+//		}
+//		printf("\n");
+//	}
 			int a=1;
 			int b=1;
 			int c=rand()%2;
@@ -53,12 +54,12 @@ void computstone(int player)
 
 			if(c == 0 && mi[x+a][y+2*b].put != 1)
 			{
-				y = y+b;
+				y = y+2*b;
 				//break;
 			}
 			else if(c == 0 && mi[x-a][y-2*b].put != 1)
 			{
-				y = y-b;
+				y = y-2*b;
 				//break;
 			}
 			else if(c == 1 && mi[x+a][y].put != 1)
@@ -72,7 +73,7 @@ void computstone(int player)
 				//break;
 			}
 	}
-	else if(atv = 100000 && dfv != 100000)
+	else if(atv == 100000 && dfv != 100000)
 	{
 		pos = dfv;
 		x = pos/100;
@@ -99,8 +100,9 @@ void computstone(int player)
 
 	}
 
-	//printf("\n\n%d\n",pos);
-	//printf("%d%d",x,y);
+
+	//printf("\n\n%d        %d\n",atv,dfv);
+	printf("%d%d",x,y);
 
 	if (player == 2)
 	{
