@@ -55,8 +55,8 @@ void com1()
 				printf("%d ", column[i]);
 
 			mode(); gotoxy(27,0);
-			if(mode() == 0) printf("defend");//defend();
-			else		attack();
+			//if(mode() == 0) printf("defend");//defend();
+			//else		attack();
 
 			flag = 0; // user turn
 		}

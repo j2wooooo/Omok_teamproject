@@ -1,6 +1,6 @@
-
-libjiwoofuncs.a: *.o
-	ar rv libjyfuncs.a *.o
+OBJFILES = com1.o checkblack.o mode.o attack.o
+libjyfuncs.a: $(OBJFILES)
+	ar rv libjyfuncs.a $(OBJFILES)
 
 attack.o: attack.c
 	gcc -c -g attack.c -I../include -o attack.o
