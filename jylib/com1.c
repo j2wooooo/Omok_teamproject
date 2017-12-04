@@ -1,7 +1,10 @@
 #include <stdio.h>
-#include "map.h"
-#include "getch.h"
-#include "gotoxy.h"
+#include "../include/map.h"
+#include "../include/getch.h"
+#include "../include/gotoxy.h"
+#include "../jyinclude/checkblack.h"
+#include "../jyinclude/mode.h"
+#include "../jyinclude/attack.h"
 
 #define USR_UP 'w' // 방향키 up
 #define USR_DOWN 's' // 방향키 down
@@ -55,8 +58,8 @@ void com1()
 				printf("%d ", column[i]);
 
 			mode(); gotoxy(27,0);
-			//if(mode() == 0) printf("defend");//defend();
-			//else		attack();
+			if(mode() == 0) printf("defend"); //defend();
+			else		attack();
 
 			flag = 0; // user turn
 		}
