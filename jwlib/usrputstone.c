@@ -3,6 +3,7 @@
 #include "../include/gotoxy.h"
 #include "../include/getch.h"
 #include "../jwinclude/mapinfoclean.h"
+#include "../jwinclude/check44.h"
 
 #define usr_UP 65 // 방향키 up
 #define usr_DOWN 66 // 방향키 down
@@ -53,10 +54,20 @@ void usrputstone(int player)
 
 		case put_stone:
 			if (player == 1 && mi[x][y/2].put != 1) {
-				printf("○");
-				mi[x][y/2].put = 1;
-				mi[x][y/2].color = 1;
-				flag = 1;
+				int cnt = check44(x,y);
+				if(cnt == 1)
+				{
+					gotoxy(13,50);
+					printf("[4X4] CAN'T PUT");
+					gotoxy(x,y);
+				}
+				else
+				{
+					printf("○");
+					mi[x][y/2].put = 1;
+					mi[x][y/2].color = 1;
+					flag = 1;
+				}
 
 			}
 			else if (player == 2 && mi[x][y/2].put != 1){

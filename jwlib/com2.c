@@ -23,11 +23,16 @@ extern int x; int y; // 현재 키보드 커서의 위치 gotoxy 함수와 연�
 void com2() // user1과 user2가 오목게임을 하는 함수
 {
 	int player = selectplayer(); // selcet player 1 = user first, 2 = com first
-
+	system("clear");
 	map_modify(); // draw map
-	gotoxy(x,y); // goto init locaton
-
+	int exitflag = 0;
 	char ch;
+
+	gotoxy(11,50);
+	printf("메뉴로 돌아가기 [z]");
+
+	gotoxy(x,y);
+
 	int color = 2; // black is first
 	int winner = 0;
 
@@ -36,50 +41,154 @@ void com2() // user1과 user2가 오목게임을 하는 함수
 		while(1)
 		{
 			usrputstone(player);
-			computstone(player);
-			//printf("\n\n\n\n\n\n\n\n\n\n");
-			//for(int i = 0; i < 20; i++)
-			//{
-			//	for(int j = 0; j < 20; j++)
-			//	{
-			//		printf("%d", mi[i][j].color);
-			//	}
-			//	printf("\n");
-			//}
-			int winner = 0;
+
 			winner = istherewinner();
 
 			if(winner == 0){}
 			else if(winner == 1)
-			{
+			{	gotoxy(10, 50);
 				printf("winner is user!\n");
+				ch = getch();
+				switch(ch){
+				case 'z':
+					exitflag = 2;
+					mapinfoclean();
+					break;
+				}
 			}
 			else
-			{
+			{	gotoxy(10,50);
 				printf("winner is computer!\n");
+				ch = getch();
+				switch(ch){
+				case 'z':
+					exitflag = 2;
+					mapinfoclean();
+					break;
+				}
 
 			}
+			if(exitflag == 2) // regame
+			{
+				exitflag = 0;
+				break;
+			}
+
+			computstone(player);
+
+			winner = istherewinner();
+
+			if(winner == 0){}
+			else if(winner == 1)
+			{	gotoxy(10, 50);
+				printf("winner is user!\n");
+				ch = getch();
+				switch(ch){
+				case 'z':
+					exitflag = 2;
+					mapinfoclean();
+					break;
+				}
+			}
+			else
+			{	gotoxy(10,50);
+				printf("winner is computer!\n");
+				ch = getch();
+				switch(ch){
+				case 'z':
+					exitflag = 2;
+					mapinfoclean();
+					break;
+				}
+
+			}
+			if(exitflag == 2) // regame
+			{
+				exitflag = 0;
+				break;
+			}
 		}
+
 	}
+
 	else // computer first
 	{
 		while(1)
 		{
 			computstone(player);
-			usrputstone(player);
 
-			int winner = 0;
 			winner = istherewinner();
 
 			if(winner == 0){}
 			else if(winner == 1)
 			{
+				gotoxy(10,50);
 				printf("winner is computer!\n");
+				ch = getch();
+				switch(ch){
+
+				case 'z':
+					exitflag = 2;
+					mapinfoclean();
+					break;
+				}
 			}
 			else
 			{
+				gotoxy(10,50);
 				printf("winner is user!\n");
+				ch = getch();
+				switch(ch){
 
+				case 'z':
+					exitflag = 2;
+					mapinfoclean();
+					break;
+				}
+
+			}
+			if(exitflag == 2) // regame
+			{
+				exitflag = 0;
+				break;
+			}
+
+			usrputstone(player);
+
+			winner = istherewinner();
+
+			if(winner == 0){}
+			else if(winner == 1)
+			{
+				gotoxy(10,50);
+				printf("winner is computer!\n");
+				ch = getch();
+				switch(ch){
+
+				case 'z':
+					exitflag = 2;
+					mapinfoclean();
+					break;
+				}
+			}
+			else
+			{
+				gotoxy(10,50);
+				printf("winner is user!\n");
+				ch = getch();
+				switch(ch){
+
+				case 'z':
+					exitflag = 2;
+					mapinfoclean();
+					break;
+				}
+
+			}
+			if(exitflag == 2) // regame
+			{
+				exitflag = 0;
+				break;
 			}
 		}
 	}
