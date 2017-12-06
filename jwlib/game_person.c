@@ -5,6 +5,7 @@
 #include "../jwinclude/mapinfoclean.h"
 #include "../jwinclude/map_modify.h"
 #include "../jwinclude/istherewinner.h"
+#include "../jwinclude/check44.h"
 
 #define usr1_UP 119 // 방향키 w
 #define usr1_DOWN 115 // 방향키 s
@@ -37,7 +38,7 @@ void game_person() // user1과 user2가 오목게임을 하는 함수
 	map_modify();
 
 	char ch; // 돌 놓을 자리를 움직이기 위한 키보드 입력 받기
-	int color = 2; //  color, 1은 write 2는 black
+	int color = 1; //  color, 1은 black 2는 white
 
 	int exitflag = 0;
 
@@ -99,19 +100,24 @@ void game_person() // user1과 user2가 오목게임을 하는 함수
 
 		case put_stone:
 			if (color == 1 && mi[x][y/2].put != 1) { // no stone and put stone color black
-				printf("○");
-				mi[x][y/2].put = 1; // cur location stone put
-				mi[x][y/2].color = 1; // cur location stone color black
+				int cnt = check44(x,y);
 
-				int val = istherewinner(); // fine winner
+				if(cnt == 1){ gotoxy(13,50); printf("[4x4] can't put"); gotoxy(x,y);}
+				else{gotoxy(13,50); printf("                       "); gotoxy(x,y);
+					printf("○");
+					mi[x][y/2].put = 1; // cur location stone put
+					mi[x][y/2].color = 1; // cur location stone color black
 
-				if(val == 1) // winner is black
-				{
-					gotoxy(10,50);
-					printf("winner is black!\n");
+					int val = istherewinner(); // fine winner
 
+					if(val == 1) // winner is black
+					{
+						gotoxy(10,50);
+						printf("winner is black!\n");
+
+					}
+					color = 2; // 다음에 놓을 돌의 색깔을 바꾼다
 				}
-				color = 2; // 다음에 놓을 돌의 색깔을 바꾼다
 			}
 			else if (color == 2 && mi[x][y/2].put != 1) { // no stone and put stone color white
 				printf("●");
