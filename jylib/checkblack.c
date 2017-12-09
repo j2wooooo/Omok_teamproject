@@ -24,6 +24,20 @@ void checkblack()
         int flag = 0; // 연속 여부 체크 플래그
 	int ii, jj;
 	int flag2 = 0;
+	blkidx = 0;
+
+	for(int i = 0; i < 500; i++)
+	{
+		if(blk[i].cont == 0)
+			break;
+
+		blk[i].start_x = 0;
+		blk[i].start_y = 0;
+		blk[i].end_x = 0;
+		blk[i].end_y = 0;
+		blk[i].cont = 0;
+		blk[i].dir = 0;
+	}
 
 	/*// 현재 map의 상태 출력
 	gotoxy(21, 0);
@@ -210,12 +224,12 @@ void checkblack()
                 }
         }
 
-	// 현재 흑돌의 상태 출력
+	/*// 현재 흑돌의 상태 출력
 	gotoxy(22, 0);
 	for(int i = 0; i < blkidx; i++)
 	{
 		printf("[BLK](%d, %d) ->", blk[i].start_x, blk[i].start_y);
 		printf(" (%d, %d)", blk[i].end_x, blk[i].end_y);
 		printf(" cont: %d, dir: %d\n", blk[i].cont, blk[i].dir);
-	}
+	}*/
 }

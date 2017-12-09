@@ -11,7 +11,7 @@ struct white_info
         int start_x, start_y;
         int end_x, end_y;
         int cont;
-	int dir;
+        int dir;
 	// 가로: 0, 세로: 1, 오른쪽 아래 대각: 2, 왼쪽 아래 대각: 3
 };
 struct white_info wht[500];
@@ -24,6 +24,20 @@ void checkwhite()
         int flag = 0; // 연속 여부 체크 플래그
 	int ii, jj;
 	int flag2 = 0;
+	whtidx = 0;
+
+	for(int i = 0; i < 500; i++)
+        {
+                if(wht[i].cont == 0)
+                        break;
+
+                wht[i].start_x = 0;
+                wht[i].start_y = 0;
+                wht[i].end_x = 0;
+                wht[i].end_y = 0;
+                wht[i].cont = 0;
+                wht[i].dir = 0;
+        }
 
 	/*// 현재 map의 상태 출력
 	gotoxy(21, 0);
@@ -89,6 +103,7 @@ void checkwhite()
 			else if((flag == 1) && (map_info[i][j] == WHITE))
 			{
 				tmp++;
+
 			}
 			// 백돌 연속 종료
 			else if((flag == 1) && (map_info[i][j] != WHITE))
@@ -117,8 +132,8 @@ void checkwhite()
 				jj = j;
                                	wht[whtidx].start_x = ii;
                                	wht[whtidx].start_y = j;
-
-                                flag = 1;
+                               
+				flag = 1;
                                 tmp = 1;
 				ii++;
                         }
@@ -148,6 +163,7 @@ void checkwhite()
 
 					whtidx++;
 				}
+
 				flag = 0;
                                 flag2 = 0;
                                 tmp = 0;
@@ -209,12 +225,12 @@ void checkwhite()
                 }
         }
 
-	// 현재 백돌의 상태 출력
+	/*// 현재 백돌의 상태 출력
 	gotoxy(22, 0);
 	for(int i = 0; i < whtidx; i++)
 	{
 		printf("[WHT](%d, %d) ->", wht[i].start_x, wht[i].start_y);
 		printf(" (%d, %d)", wht[i].end_x, wht[i].end_y);
 		printf(" cont: %d, dir: %d\n", wht[i].cont, wht[i].dir);
-	}
+	}*/
 }
