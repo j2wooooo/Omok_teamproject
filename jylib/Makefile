@@ -1,4 +1,4 @@
-OBJFILES = com1.o checkblack.o mode.o attack.o
+OBJFILES = com1.o checkblack.o checkwhite.o mode.o attack.o
 libjyfuncs.a: $(OBJFILES)
 	ar rv libjyfuncs.a $(OBJFILES)
 
@@ -7,6 +7,9 @@ attack.o: attack.c
 
 mode.o: mode.c
 	gcc -c -g mode.c -I../include -I../jyinclude -o mode.o
+
+checkwhite.o: checkwhite.c
+	gcc -c -g checkwhite.c -I../include -I../jyinclude -o checkwhite.o
 
 checkblack.o: checkblack.c
 	gcc -c -g checkblack.c -I../include -I../jyinclude -o checkblack.o

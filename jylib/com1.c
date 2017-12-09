@@ -3,6 +3,7 @@
 #include "../include/getch.h"
 #include "../include/gotoxy.h"
 #include "../jyinclude/checkblack.h"
+#include "../jyinclude/checkwhite.h"
 #include "../jyinclude/mode.h"
 #include "../jyinclude/attack.h"
 
@@ -18,8 +19,6 @@
 extern int map_info[20][20];
 extern int x; // 현재 커서 위치
 extern int y;
-//extern int row[20];
-//extern int column[20];
 
 void com1()
 {
@@ -49,16 +48,10 @@ void com1()
 		else // com mode
 		{ 
 			checkblack();
+			checkwhite();
 
-			/*gotoxy(25, 0); // print cur status
-			for(int i = 0; i < 20; i++)
-				printf("%d ", row[i]);
-			printf("\n");
-			for(int i = 0; i < 20; i++)
-				printf("%d ", column[i]);*/
-
-			/*gotoxy(27,0);
-			if(mode() == 0)
+			gotoxy(21,0);
+			if(mode())
 			{
 				printf("defend");
 				//defend();
@@ -67,7 +60,7 @@ void com1()
 			{
 				printf("attack");
 				attack();
-			}*/
+			}
 
 			flag = 0; // user turn
 		}
