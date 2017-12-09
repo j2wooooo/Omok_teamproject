@@ -25,12 +25,9 @@ int mode()
 		}
 		else if((flag == 1) && (column[i] <= 0)) // 연속 종료
 		{
-			if(cont > 2) return 0; // defend
-			else // check more
-			{
-				flag = 0;
-				cont = 0;
-			}
+			
+			flag = 0;
+			cont = 0;
 		}
 	}
 

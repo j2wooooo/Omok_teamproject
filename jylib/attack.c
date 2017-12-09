@@ -6,5 +6,5 @@ extern int column[20];
 
 void attack()
 {
-
+	
 }

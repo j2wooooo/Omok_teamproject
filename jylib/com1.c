@@ -6,20 +6,20 @@
 #include "../jyinclude/mode.h"
 #include "../jyinclude/attack.h"
 
-#define USR_UP 'w' // 방향키 up
-#define USR_DOWN 's' // 방향키 down
-#define USR_RIGHT 'd' // 방향키 right
-#define USR_LEFT 'a' // 방향키 left
+#define USR_UP 65 // 방향키 up
+#define USR_DOWN 66 // 방향키 down
+#define USR_RIGHT 67 // 방향키 right
+#define USR_LEFT 68 // 방향키 left
 #define PUT_STONE 32 // 돌 놓기
 
 #define BLACK -2
 #define WHITE 2
 
 extern int map_info[20][20];
-extern int x;
+extern int x; // 현재 커서 위치
 extern int y;
-extern int row[20];
-extern int column[20];
+//extern int row[20];
+//extern int column[20];
 
 void com1()
 {
@@ -50,16 +50,24 @@ void com1()
 		{ 
 			checkblack();
 
-			gotoxy(25, 0); // print cur status
+			/*gotoxy(25, 0); // print cur status
 			for(int i = 0; i < 20; i++)
 				printf("%d ", row[i]);
 			printf("\n");
 			for(int i = 0; i < 20; i++)
-				printf("%d ", column[i]);
+				printf("%d ", column[i]);*/
 
-			mode(); gotoxy(27,0);
-			if(mode() == 0) printf("defend"); //defend();
-			else		attack();
+			/*gotoxy(27,0);
+			if(mode() == 0)
+			{
+				printf("defend");
+				//defend();
+			}
+			else
+			{
+				printf("attack");
+				attack();
+			}*/
 
 			flag = 0; // user turn
 		}
