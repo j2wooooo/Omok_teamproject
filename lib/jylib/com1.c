@@ -1,18 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "../include/map.h"
-#include "../include/getch.h"
-#include "../include/gotoxy.h"
-#include "../include/whofirst.h"
-#include "../include/usrput.h"
-#include "../include/checkblack.h"
-#include "../include/checkwhite.h"
-#include "../include/whitemap.h"
-#include "../include/mode.h"
-#include "../include/attack.h"
-#include "../include/defend.h"
-#include "../include/winner.h"
+#include "../../include/jjinclude/map.h"
+#include "../../include/jjinclude/getch.h"
+#include "../../include/jjinclude/gotoxy.h"
+#include "../../include/jyinclude/whofirst.h"
+#include "../../include/jyinclude/usrput.h"
+#include "../../include/jyinclude/checkblack.h"
+#include "../../include/jyinclude/checkwhite.h"
+#include "../../include/jyinclude/whitemap.h"
+#include "../../include/jyinclude/mode.h"
+#include "../../include/jyinclude/attack.h"
+#include "../../include/jyinclude/defend.h"
+#include "../../include/jyinclude/winner.h"
 
 #define BLACK -2
 #define WHITE 2

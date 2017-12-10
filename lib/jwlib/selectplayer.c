@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../include/getch.h"
+#include "../../include/jjinclude/getch.h"
 
-int whofirst()
+int selectplayer()
 {
 	int player = 0;
 

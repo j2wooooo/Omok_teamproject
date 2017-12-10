@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../include/getch.h"
-#include "../include/gotoxy.h"
-#include "../include/mapinfoclean.h"
-#include "../include/map_modify.h"
-#include "../include/istherewinner.h"
-#include "../include/check44.h"
+#include "../../include/jjinclude/getch.h"
+#include "../../include/jjinclude/gotoxy.h"
+#include "../../include/jwinclude/mapinfoclean.h"
+#include "../../include/jwinclude/map_modify.h"
+#include "../../include/jwinclude/istherewinner.h"
+#include "../../include/jwinclude/check44.h"
 
 #define usr1_UP 119 // 방향키 w
 #define usr1_DOWN 115 // 방향키 s
@@ -100,7 +100,7 @@ void game_person() // user1과 user2가 오목게임을 하는 함수
 
 		case put_stone:
 			if (color == 1 && mi[x][y/2].put != 1) { // no stone and put stone color black
-				int cnt = check44(x,y);
+				int cnt = check44(x,y);				
 
 				if(cnt == 1){ gotoxy(13,50); printf("[4x4] can't put"); gotoxy(x,y);}
 				else{gotoxy(13,50); printf("                       "); gotoxy(x,y);

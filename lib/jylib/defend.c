@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../include/gotoxy.h"
+#include "../../include/jjinclude/gotoxy.h"
 
 #define BLACK -2
 #define WHITE 2
@@ -39,48 +39,32 @@ struct white_map
 };
 extern struct white_map whtmap[20][20];
 
-int ax, ay; // 공격 좌표
+int dx, dy; // 수비 좌표
 
-void attack()
+void defend()
 {
 	int big = 0;
 
-	if(blknum == 1)
+	for(int i = 0; i < 20; i++)
 	{
-		if(blk[0].end_y < 10)
+		for(int j = 0; j < 20; j++)
 		{
-			ax = blk[0].end_x;
-			ay = blk[0].end_y + 1;
-		}
-		else
-		{
-			ax = blk[0].end_x;
-                        ay = blk[0].end_y - 1;
-		}
-	}
-	else
-	{
-		for(int i = 0; i < 20; i++)
-		{
-			for(int j = 0; j < 20; j++)
+			for(int k = 0; k < 8; k++)
 			{
-				for(int k = 0; k < 8; k++)
+				if((whtmap[i][j].df[k]) && (map_info[i][j] == 0))
 				{
-					if((whtmap[i][j].at[k]) && (map_info[i][j] == 0))
+					if(big < whtmap[i][j].df[k])
 					{
-						if(big < whtmap[i][j].at[k])
-						{
-							big = whtmap[i][j].at[k];
-							ax = i;
-							ay = j;
-						}
+						big = whtmap[i][j].df[k];
+						dx = i;
+						dy = j;
 					}
 				}
 			}
 		}
 	}
 
-	gotoxy(ax, ay*2);
-	map_info[ax][ay] = WHITE;
+	gotoxy(dx, dy*2);
+	map_info[dx][dy] = WHITE;
 	printf("○");
 }

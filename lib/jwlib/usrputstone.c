@@ -1,9 +1,9 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include "../include/gotoxy.h"
-#include "../include/getch.h"
-#include "../include/mapinfoclean.h"
-#include "../include/check44.h"
+#include "../../include/jjinclude/gotoxy.h"
+#include "../../include/jjinclude/getch.h"
+#include "../../include/jwinclude/mapinfoclean.h"
+#include "../../include/jwinclude/check44.h"
 
 #define usr_UP 65 // 방향키 up
 #define usr_DOWN 66 // 방향키 down
