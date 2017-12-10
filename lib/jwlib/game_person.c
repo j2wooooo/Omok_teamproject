@@ -100,7 +100,7 @@ void game_person() // user1과 user2가 오목게임을 하는 함수
 
 		case put_stone:
 			if (color == 1 && mi[x][y/2].put != 1) { // no stone and put stone color black
-				int cnt = check44(x,y);
+				int cnt = check44(x,y);				
 
 				if(cnt == 1){ gotoxy(13,50); printf("[4x4] can't put"); gotoxy(x,y);}
 				else{gotoxy(13,50); printf("                       "); gotoxy(x,y);
