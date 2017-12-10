@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "../include/getch.h"
-#include "../include/gotoxy.h"
-#include "../jyinclude/check33.h"
-#include "../jyinclude/check44.h"
+#include "../../include/jjinclude/getch.h"
+#include "../../include/jjinclude/gotoxy.h"
+#include "../../include/jyinclude/check33.h"
+#include "../../include/jyinclude/check44.h"
 
 #define USR_UP 65 // 방향키 up
 #define USR_DOWN 66 // 방향키 down
@@ -38,19 +38,21 @@ void usrput2()
 		case PUT_STONE:
 		        if (map_info[x][y/2] == 0) // if empty location 
 		    	{
-				if(check33(x, y))
+				int cnt1 = check33(x, y);
+				int cnt2 = check44(x, y);			
+				if(cnt1)
 				{
 					gotoxy(13, 50);
 					printf("[3X3] CAN'T PUT");
 					gotoxy(x, y);
 				}
-				else if(check44(x, y))
+				if(cnt2)
                                 {
                                         gotoxy(13, 50);
                                         printf("[4X4] CAN'T PUT");
                                         gotoxy(x, y);
                                 }
-				else
+				if(!cnt1 && !cnt2)
 				{
 					map_info[x][y/2] = BLACK;
 		               		printf("●");
@@ -58,7 +60,6 @@ void usrput2()
 				}
 			}
 		}
-
 		gotoxy(x, y);
 	}
 }

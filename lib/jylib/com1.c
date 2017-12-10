@@ -1,18 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "../include/map.h"
-#include "../include/getch.h"
-#include "../include/gotoxy.h"
-#include "../jyinclude/whofirst.h"
-#include "../jyinclude/usrput.h"
-#include "../jyinclude/checkblack.h"
-#include "../jyinclude/checkwhite.h"
-#include "../jyinclude/whitemap.h"
-#include "../jyinclude/mode.h"
-#include "../jyinclude/attack.h"
-#include "../jyinclude/defend.h"
-#include "../jyinclude/winner.h"
+#include "../../include/jjinclude/map.h"
+#include "../../include/jjinclude/getch.h"
+#include "../../include/jjinclude/gotoxy.h"
+#include "../../include/jyinclude/whofirst.h"
+#include "../../include/jyinclude/usrput.h"
+#include "../../include/jyinclude/checkblack.h"
+#include "../../include/jyinclude/checkwhite.h"
+#include "../../include/jyinclude/whitemap.h"
+#include "../../include/jyinclude/mode.h"
+#include "../../include/jyinclude/attack.h"
+#include "../../include/jyinclude/defend.h"
+#include "../../include/jyinclude/winner.h"
 
 #define BLACK -2
 #define WHITE 2
@@ -45,7 +45,7 @@ void com1()
 			usrput();
 			//gotoxy(x, y);
 
-			// com mode
+			/*// com mode
 			checkblack();
 			checkwhite();
 		        whitemap();
@@ -60,7 +60,7 @@ void com1()
 			{
 				printf("attack");
 				attack();
-			}
+			}*/
 		
 			// check the winner
 			checkwhite();

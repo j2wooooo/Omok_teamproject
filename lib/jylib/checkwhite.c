@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../include/gotoxy.h"
+#include "../../include/jjinclude/gotoxy.h"
 
 #define BLACK -2
 #define WHITE 2

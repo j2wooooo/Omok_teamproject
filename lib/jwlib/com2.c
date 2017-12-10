@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../include/getch.h" // 문자를 입력으로 받을 수 있는 함수
-#include "../include/gotoxy.h" // 키보드 커서를 이동시켜주는 함수
-#include "../jwinclude/mapinfoclean.h"
-#include "../jwinclude/selectplayer.h"
-#include "../jwinclude/istherewinner.h"
-#include "../jwinclude/map_modify.h"
-#include "../jwinclude/usrputstone.h"
-#include "../jwinclude/computstone.h"
+#include "../../include/jjinclude/getch.h" // 문자를 입력으로 받을 수 있는 함수
+#include "../../include/jjinclude/gotoxy.h" // 키보드 커서를 이동시켜주는 함수
+#include "../../include/jwinclude/mapinfoclean.h"
+#include "../../include/jwinclude/selectplayer.h"
+#include "../../include/jwinclude/istherewinner.h"
+#include "../../include/jwinclude/map_modify.h"
+#include "../../include/jwinclude/usrputstone.h"
+#include "../../include/jwinclude/computstone.h"
 
 struct map_info
 {

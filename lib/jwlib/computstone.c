@@ -1,12 +1,12 @@
-#include "../include/gotoxy.h"
+#include "../../include/jjinclude/gotoxy.h"
 #include<stdio.h>
 #include<stdlib.h>
 #include<unistd.h>
-#include "../jwinclude/makedfvaluemap.h"
-#include "../jwinclude/makeatvaluemap.h"
-#include "../jwinclude/findlargestdfvalue.h"
-#include "../jwinclude/findlargestatvalue.h"
-#include "../jwinclude/valueclear.h"
+#include "../../include/jwinclude/makedfvaluemap.h"
+#include "../../include/jwinclude/makeatvaluemap.h"
+#include "../../include/jwinclude/findlargestdfvalue.h"
+#include "../../include/jwinclude/findlargestatvalue.h"
+#include "../../include/jwinclude/valueclear.h"
 
 struct map_info
 {

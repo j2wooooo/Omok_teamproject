@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "../include/getch.h"
-#include "../include/gotoxy.h"
-#include "../jyinclude/check33.h"
+#include "../../include/jjinclude/getch.h"
+#include "../../include/jjinclude/gotoxy.h"
+#include "../../include/jyinclude/check33.h"
 
 #define USR_UP 65 // 방향키 up
 #define USR_DOWN 66 // 방향키 down

@@ -1,18 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "../include/map.h"
-#include "../include/getch.h"
-#include "../include/gotoxy.h"
-#include "../jyinclude/whofirst.h"
-#include "../jyinclude/usrput2.h"
-#include "../jyinclude/checkblack.h"
-#include "../jyinclude/checkwhite.h"
-#include "../jyinclude/whitemap.h"
-#include "../jyinclude/mode.h"
-#include "../jyinclude/attack.h"
-#include "../jyinclude/defend.h"
-#include "../jyinclude/winner2.h"
+#include "../../include/jjinclude/map.h"
+#include "../../include/jjinclude/getch.h"
+#include "../../include/jjinclude/gotoxy.h"
+#include "../../include/jyinclude/whofirst.h"
+#include "../../include/jyinclude/usrput2.h"
+#include "../../include/jyinclude/checkblack.h"
+#include "../../include/jyinclude/checkwhite.h"
+#include "../../include/jyinclude/whitemap.h"
+#include "../../include/jyinclude/mode.h"
+#include "../../include/jyinclude/attack.h"
+#include "../../include/jyinclude/defend.h"
+#include "../../include/jyinclude/winner2.h"
 
 #define BLACK -2
 #define WHITE 2
@@ -51,7 +51,7 @@ void com3()
 		        whitemap();
 
 			gotoxy(21,0);
-			if(mode())
+			/*if(mode())
 			{
 				printf("defend");
 				defend();
@@ -60,7 +60,7 @@ void com3()
 			{
 				printf("attack");
 				attack();
-			}
+			}*/
 		
 			// check the winner
 			checkwhite();
@@ -94,8 +94,8 @@ void com3()
 		        }
 			if(fin == 3)
 			{
-				gotoxy(10,50);
-				printf("6 Omok: keep going!\n");
+				gotoxy(13,50);
+				printf("[NOT 5] keep going!\n");
 			}
 		}
 	}
