@@ -1,4 +1,4 @@
-DIRS = lib jjlib jwlib jylib app
+DIRS = jjlib jwlib jylib
 
 all:
 	@for d in $(DIRS);\
