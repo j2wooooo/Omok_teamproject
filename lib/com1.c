@@ -4,15 +4,15 @@
 #include "../include/map.h"
 #include "../include/getch.h"
 #include "../include/gotoxy.h"
-#include "../jyinclude/whofirst.h"
-#include "../jyinclude/usrput2.h"
-#include "../jyinclude/checkblack.h"
-#include "../jyinclude/checkwhite.h"
-#include "../jyinclude/whitemap.h"
-#include "../jyinclude/mode.h"
-#include "../jyinclude/attack.h"
-#include "../jyinclude/defend.h"
-#include "../jyinclude/winner2.h"
+#include "../include/whofirst.h"
+#include "../include/usrput.h"
+#include "../include/checkblack.h"
+#include "../include/checkwhite.h"
+#include "../include/whitemap.h"
+#include "../include/mode.h"
+#include "../include/attack.h"
+#include "../include/defend.h"
+#include "../include/winner.h"
 
 #define BLACK -2
 #define WHITE 2
@@ -21,7 +21,7 @@ extern int map_info[20][20];
 extern int x; // 현재 커서 위치
 extern int y;
 
-void com3()
+void com1()
 {
 	int order = whofirst(); // 1->user, 0->com
 
@@ -42,7 +42,7 @@ void com3()
 		while(1)
 		{
 			// usr mode
-			usrput2();
+			usrput();
 			//gotoxy(x, y);
 
 			// com mode
@@ -65,7 +65,7 @@ void com3()
 			// check the winner
 			checkwhite();
 		        whitemap();		
-			fin = winner2();
+			fin = winner();
 		        if(fin == 1)
 		        {
 		                gotoxy(10, 50);
@@ -92,11 +92,6 @@ void com3()
 		                        break;
 		                }
 		        }
-			if(fin == 3)
-			{
-				gotoxy(10,50);
-				printf("6 Omok: keep going!\n");
-			}
 		}
 	}
 }

@@ -3,7 +3,7 @@
 
 extern int map_info[20][20];
 
-int check44(int x, int y)
+int check444(int x, int y)
 {
    int count = 0;
    // 가로체크. 

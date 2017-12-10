@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include "../include/getch.h"
 #include "../include/gotoxy.h"
-#include "../jwinclude/mapinfoclean.h"
-#include "../jwinclude/map_modify.h"
-#include "../jwinclude/istherewinner.h"
-#include "../jwinclude/check44.h"
+#include "../include/mapinfoclean.h"
+#include "../include/map_modify.h"
+#include "../include/istherewinner.h"
+#include "../include/check44.h"
 
 #define usr1_UP 119 // 방향키 w
 #define usr1_DOWN 115 // 방향키 s

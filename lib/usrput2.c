@@ -3,8 +3,8 @@
 
 #include "../include/getch.h"
 #include "../include/gotoxy.h"
-#include "../jyinclude/check33.h"
-#include "../jyinclude/check44.h"
+#include "../include/check33.h"
+#include "../include/check444.h"
 
 #define USR_UP 65 // 방향키 up
 #define USR_DOWN 66 // 방향키 down
@@ -44,7 +44,7 @@ void usrput2()
 					printf("[3X3] CAN'T PUT");
 					gotoxy(x, y);
 				}
-				else if(check44(x, y))
+				else if(check444(x, y))
                                 {
                                         gotoxy(13, 50);
                                         printf("[4X4] CAN'T PUT");

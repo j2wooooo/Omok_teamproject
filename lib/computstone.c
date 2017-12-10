@@ -2,11 +2,11 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<unistd.h>
-#include "../jwinclude/makedfvaluemap.h"
-#include "../jwinclude/makeatvaluemap.h"
-#include "../jwinclude/findlargestdfvalue.h"
-#include "../jwinclude/findlargestatvalue.h"
-#include "../jwinclude/valueclear.h"
+#include "../include/makedfvaluemap.h"
+#include "../include/makeatvaluemap.h"
+#include "../include/findlargestdfvalue.h"
+#include "../include/findlargestatvalue.h"
+#include "../include/valueclear.h"
 
 struct map_info
 {

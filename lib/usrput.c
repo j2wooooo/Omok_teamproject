@@ -3,7 +3,7 @@
 
 #include "../include/getch.h"
 #include "../include/gotoxy.h"
-#include "../jyinclude/check33.h"
+#include "../include/check33.h"
 
 #define USR_UP 65 // 방향키 up
 #define USR_DOWN 66 // 방향키 down
