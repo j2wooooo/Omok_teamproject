@@ -1,7 +1,11 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 #include "../include/map.h"
 #include "../include/getch.h"
 #include "../include/gotoxy.h"
+#include "../jyinclude/whofirst.h"
+#include "../jyinclude/usrput.h"
 #include "../jyinclude/checkblack.h"
 #include "../jyinclude/checkwhite.h"
 #include "../jyinclude/whitemap.h"
@@ -9,12 +13,6 @@
 #include "../jyinclude/attack.h"
 #include "../jyinclude/defend.h"
 #include "../jyinclude/winner.h"
-
-#define USR_UP 65 // 방향키 up
-#define USR_DOWN 66 // 방향키 down
-#define USR_RIGHT 67 // 방향키 right
-#define USR_LEFT 68 // 방향키 left
-#define PUT_STONE 32 // 돌 놓기
 
 #define BLACK -2
 #define WHITE 2
@@ -25,41 +23,32 @@ extern int y;
 
 void com1()
 {
-	int flag = 0; // 0->user, 1->com
-	char dir;
+	int order = whofirst(); // 1->user, 0->com
+
+	char ch;
 	int fin;
 
-	while(1)
-	{
-		if(flag == 0)
-		{
-			dir = getch();
-                	switch (dir)
-			{
-                	case USR_UP:
-				if(x-1 > 1) x -= 1; break;
-                	case USR_LEFT:
-				if(y-2 > 1) y -= 2; break;
-                	case USR_DOWN:
-				if(x+1 < 20) x += 1; break;
-                	case USR_RIGHT:
-				if(y+2 < 40) y += 2; break;
+	system("clear");
 
-                	case PUT_STONE:
-                       		if (map_info[x][y/2] == 0) // if empty location
-                        	{
-					map_info[x][y/2] = BLACK;
-                                	printf("●");
-					flag = 1; // com turn
-                        	}
-               		}
-			gotoxy(x, y);
-		}
-		else // com mode
-		{ 
+	map();
+
+        gotoxy(11,50);
+        printf("메뉴로 돌아가기 [z]");
+
+        gotoxy(x,y);
+
+	if(order == 1) // user first
+	{
+		while(1)
+		{
+			// usr mode
+			usrput();
+			//gotoxy(x, y);
+
+			// com mode
 			checkblack();
 			checkwhite();
-                        whitemap();
+		        whitemap();
 
 			gotoxy(21,0);
 			if(mode())
@@ -72,23 +61,37 @@ void com1()
 				printf("attack");
 				attack();
 			}
-
+		
+			// check the winner
 			checkwhite();
-                        whitemap();
+		        whitemap();		
+			fin = winner();
+		        if(fin == 1)
+		        {
+		                gotoxy(10, 50);
+		                printf("winner is user!\n");
 
-			flag = 0; // user turn
-		}
+		                ch = getch();
+		                switch(ch)
+		                {
+		                case 'z':
+		                        //mapinfoclean();
+		                        break;
+		                }
+		        }
+			if(fin == 2)
+		        {
+		                gotoxy(10, 50);
+		                printf("winner is computer!\n");
 
-		fin = winner();
-		if(fin == 1)
-		{
-			gotoxy(21, 0);
-			printf("USR WIN!");
-		}
-		if(fin == 2)
-		{
-			gotoxy(21, 0);
-			printf("COM WIN!");
+		                ch = getch();
+		                switch(ch)
+		                {
+		                case 'z':
+		                        //mapinfoclean();
+		                        break;
+		                }
+		        }
 		}
 	}
 }

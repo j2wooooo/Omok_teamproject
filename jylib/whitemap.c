@@ -122,7 +122,7 @@ void whitemap()
 		}
 	}
 
-	// 현재 wht의상태 출력
+	/*// 현재 wht의상태 출력
         for(int i = 0; i < 20; i++)
         {
                 for(int j = 0; j < 20; j++)
@@ -141,5 +141,5 @@ void whitemap()
                                 }
 			}
 		}
-        }
+        }*/
 }

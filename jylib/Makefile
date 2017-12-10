@@ -1,4 +1,4 @@
-OBJFILES = com1.o checkblack.o checkwhite.o whitemap.o mode.o attack.o defend.o winner.o
+OBJFILES = com1.o whofirst.o usrput.o checkblack.o checkwhite.o whitemap.o mode.o attack.o defend.o winner.o
 
 libjyfuncs.a: $(OBJFILES)
 	ar rv libjyfuncs.a $(OBJFILES)
@@ -23,6 +23,12 @@ checkwhite.o: checkwhite.c
 
 checkblack.o: checkblack.c
 	gcc -c -g checkblack.c -I../include -I../jyinclude -o checkblack.o
+
+usrput.o: usrput.c
+	gcc -c -g usrput.c -I../include -I../jyinclude -o usrput.o
+
+whofirst.o: whofirst.c
+	gcc -c -g whofirst.c -I../include -I../jyinclude -o whofirst.o
 
 com1.o: com1.c
 	gcc -c -g com1.c -I../include -I../jyinclude -o com1.o
