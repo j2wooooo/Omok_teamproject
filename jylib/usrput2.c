@@ -4,6 +4,7 @@
 #include "../include/getch.h"
 #include "../include/gotoxy.h"
 #include "../jyinclude/check33.h"
+#include "../jyinclude/check44.h"
 
 #define USR_UP 65 // 방향키 up
 #define USR_DOWN 66 // 방향키 down
@@ -18,7 +19,7 @@ extern int map_info[20][20];
 extern int x; // 현재 커서 위치
 extern int y;
 
-void usrput()
+void usrput2()
 {
 	while(1)
 	{
@@ -43,6 +44,12 @@ void usrput()
 					printf("[3X3] CAN'T PUT");
 					gotoxy(x, y);
 				}
+				else if(check44(x, y))
+                                {
+                                        gotoxy(13, 50);
+                                        printf("[4X4] CAN'T PUT");
+                                        gotoxy(x, y);
+                                }
 				else
 				{
 					map_info[x][y/2] = BLACK;

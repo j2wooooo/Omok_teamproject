@@ -1,4 +1,4 @@
-#ifdef MAP
-#define MAP
+#ifdef MAP_H
+#define MAP_H
 void map()
 #endif

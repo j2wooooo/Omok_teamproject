@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "map.h"
+#include "../include/map.h"
 
 int map_info[20][20] = {0}; // 돌을 놓을 수 있는 위치를 0으로 초기화 해 놓음
 

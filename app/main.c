@@ -8,6 +8,7 @@ void gotoxy(int x,int y);
 void game_person();
 void com1();
 void com2();
+void com3();
 
 int map_info[20][20];
 int x=10; int y=10;
@@ -42,6 +43,7 @@ int main(void)
 		{
 			map();
 			gotoxy(x,y);
+			com3();
 			return 0;
 		}
 		else if(menu == 6)
